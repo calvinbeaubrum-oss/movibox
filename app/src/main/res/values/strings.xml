@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MoviBox</string>
+    <string name="tagline">Sans pub · HD sans plafond · Téléchargements libres · Tout le catalogue pour tout le monde</string>
+
+    <string name="tab_home">Accueil</string>
+    <string name="tab_search">Recherche</string>
+    <string name="tab_downloads">Téléchargements</string>
+    <string name="tab_profile">Profil</string>
+
+    <string name="favorite">Favori</string>
+    <string name="play">Lire</string>
+    <string name="delete">Supprimer</string>
+
+    <string name="search_hint">Titre, année, description…</string>
+    <string name="search_empty">Aucun résultat. Essayez un autre titre.</string>
+
+    <string name="downloads_title">Téléchargements</string>
+    <string name="downloads_empty">Aucun téléchargement. Choisissez un film, puis l\'icône de téléchargement dans le lecteur.</string>
+    <string name="download_done">Terminé — prêt hors ligne</string>
+    <string name="download_failed">Échec — réessayez depuis le lecteur</string>
+    <string name="download_running">En cours…</string>
+    <string name="download_file">Télécharger en %1$s</string>
+    <string name="offline_playback">Lecture hors ligne (fichier local)</string>
+
+    <string name="perk_no_ads">Sans pub</string>
+    <string name="perk_hd">HD sans plafond</string>
+    <string name="perk_downloads">Téléchargements multiples libres</string>
+    <string name="perk_all_content">Tout le catalogue pour tous</string>
+
+    <string name="stats_title">%1$d films disponibles</string>
+    <string name="shield_title">Bouclier anti-pub</string>
+    <string name="shield_1">Zéro SDK publicitaire embarqué</string>
+    <string name="shield_2">Zéro permission publicitaire (ni identifiant publicité, ni fenêtre superposée)</string>
+    <string name="shield_3">Trafic en clair interdit : HTTPS uniquement</string>
+    <string name="shield_4">Seuls les serveurs du catalogue (archive.org) sont contactés</string>
+    <string name="about_title">À propos</string>
+    <string name="about_text">MoviBox est un lecteur vidéo libre, sans publicité et sans compte. Les films proviennent de l\'Internet Archive (domaine public) et de la Blender Foundation (licences libres). Reconstruction fidèle de l\'architecture de l\'application d\'origine, en code original.</string>
+    <string name="about_sources">Voir les sources sur archive.org</string>
+</resources>

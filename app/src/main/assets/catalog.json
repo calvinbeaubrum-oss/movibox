@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "source": "Internet Archive (films du domaine public) + Blender Foundation (CC-BY)",
+  "categories": ["classics", "animation", "scifi"],
+  "items": [
+    {
+      "id": "big_buck_bunny",
+      "title": "Big Buck Bunny",
+      "year": "2008",
+      "category": "animation",
+      "description": "Un gros lapin débonnaire se venge de trois rongeurs cruels. Court métrage libre de la Blender Foundation.",
+      "poster": "https://archive.org/services/img/BigBuckBunny_124",
+      "files": [
+        { "name": "720p", "url": "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4", "sizeMb": 59 }
+      ]
+    },
+    {
+      "id": "sintel",
+      "title": "Sintel",
+      "year": "2010",
+      "category": "animation",
+      "description": "Une jeune guerrière part à travers le désert et les montagnes pour retrouver le dragon qu'elle a soigné.",
+      "poster": "https://archive.org/services/img/Sintel",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/Sintel/sintel-2048-surround.mp4", "sizeMb": 296 },
+        { "name": "Éco", "url": "https://archive.org/download/Sintel/sintel-2048-surround_512kb.mp4", "sizeMb": 101 }
+      ]
+    },
+    {
+      "id": "elephants_dream",
+      "title": "Elephants Dream",
+      "year": "2006",
+      "category": "animation",
+      "description": "Deux explorateurs traversent une machine démesurée et étrange. Premier film ouvert de la Blender Foundation.",
+      "poster": "https://archive.org/services/img/ElephantsDream",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/ElephantsDream/ed_hd.mp4", "sizeMb": 65 },
+        { "name": "Éco", "url": "https://archive.org/download/ElephantsDream/ed_hd_512kb.mp4", "sizeMb": 45 }
+      ]
+    },
+    {
+      "id": "sita_sings_the_blues",
+      "title": "Sita Sings the Blues",
+      "year": "2008",
+      "category": "animation",
+      "description": "Le Ramayana revisité en animation jazzy par Nina Paley. Film libre en 1080p.",
+      "poster": "https://archive.org/services/img/Sita_Sings_the_Blues",
+      "files": [
+        { "name": "1080p", "url": "https://archive.org/download/Sita_Sings_the_Blues/Sita_Sings_the_Blues_1080p.mp4", "sizeMb": 4224 }
+      ]
+    },
+    {
+      "id": "gullivers_travels1939",
+      "title": "Gulliver's Travels",
+      "year": "1939",
+      "category": "animation",
+      "description": "L'adaptation animée des Fleischer Studios : Gulliver s'échoue sur l'île de Lilliput.",
+      "poster": "https://archive.org/services/img/gullivers_travels1939",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/gullivers_travels1939/gullivers_travels1939.mp4", "sizeMb": 433 },
+        { "name": "Éco", "url": "https://archive.org/download/gullivers_travels1939/gullivers_travels1939_512kb.mp4", "sizeMb": 302 }
+      ]
+    },
+    {
+      "id": "his_girl_friday",
+      "title": "His Girl Friday",
+      "year": "1940",
+      "category": "classics",
+      "description": "Un rédacteur en chef tente de garder son ex-femme journaliste avant son remariage. Comédie culte avec Cary Grant et Rosalind Russell.",
+      "poster": "https://archive.org/services/img/his_girl_friday",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/his_girl_friday/his_girl_friday.mp4", "sizeMb": 549 },
+        { "name": "Éco", "url": "https://archive.org/download/his_girl_friday/his_girl_friday_512kb.mp4", "sizeMb": 383 }
+      ]
+    },
+    {
+      "id": "suddenly",
+      "title": "Suddenly",
+      "year": "1954",
+      "category": "classics",
+      "description": "Des tueurs prennent le contrôle d'une maison tranquille pour viser le président. Thriller avec Frank Sinatra.",
+      "poster": "https://archive.org/services/img/suddenly",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/suddenly/suddenly.mp4", "sizeMb": 450 },
+        { "name": "Éco", "url": "https://archive.org/download/suddenly/suddenly_512kb.mp4", "sizeMb": 315 }
+      ]
+    },
+    {
+      "id": "TheStranger_0",
+      "title": "The Stranger",
+      "year": "1946",
+      "category": "classics",
+      "description": "Un agent traque un criminel de guerre réfugié dans une petite ville américaine. Réalisé et interprété par Orson Welles.",
+      "poster": "https://archive.org/services/img/TheStranger_0",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/TheStranger_0/The_Stranger.mp4", "sizeMb": 544 },
+        { "name": "Éco", "url": "https://archive.org/download/TheStranger_0/The_Stranger_512kb.mp4", "sizeMb": 379 }
+      ]
+    },
+    {
+      "id": "dressed_to_kill",
+      "title": "Dressed to Kill",
+      "year": "1946",
+      "category": "classics",
+      "description": "Sherlock Holmes et le Dr Watson enquêtent sur trois boîtes de musique volées et un triple meurtre.",
+      "poster": "https://archive.org/services/img/dressed_to_kill",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/dressed_to_kill/dressed_to_kill.mp4", "sizeMb": 426 },
+        { "name": "Éco", "url": "https://archive.org/download/dressed_to_kill/dressed_to_kill_512kb.mp4", "sizeMb": 297 }
+      ]
+    },
+    {
+      "id": "my_favorite_brunette",
+      "title": "My Favorite Brunette",
+      "year": "1947",
+      "category": "classics",
+      "description": "Un photographe de mode se retrouve malgré lui mêlé à une vraie enquête de détective. Comédie avec Bob Hope et Dorothy Lamour.",
+      "poster": "https://archive.org/services/img/my_favorite_brunette",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/my_favorite_brunette/my_favorite_brunette.mp4", "sizeMb": 520 },
+        { "name": "Éco", "url": "https://archive.org/download/my_favorite_brunette/my_favorite_brunette_512kb.mp4", "sizeMb": 361 }
+      ]
+    },
+    {
+      "id": "JungleBook",
+      "title": "Jungle Book",
+      "year": "1942",
+      "category": "classics",
+      "description": "Mowgli, élevé par les loups, affronte la jungle et le monde des hommes. Adaptation technicolor avec Sabu.",
+      "poster": "https://archive.org/services/img/JungleBook",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/JungleBook/Jungle_Book.mp4", "sizeMb": 625 },
+        { "name": "Éco", "url": "https://archive.org/download/JungleBook/Jungle_Book.ogv", "sizeMb": 505 }
+      ]
+    },
+    {
+      "id": "ThePhantomoftheOpera",
+      "title": "The Phantom of the Opera",
+      "year": "1925",
+      "category": "classics",
+      "description": "Le fantôme hante les coulisses de l'Opéra de Paris. Classique muet avec Lon Chaney, film d'horreur fondateur.",
+      "poster": "https://archive.org/services/img/ThePhantomoftheOpera",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/ThePhantomoftheOpera/Phantom_of_the_Opera_512kb.mp4", "sizeMb": 442 }
+      ]
+    },
+    {
+      "id": "lost_world",
+      "title": "The Lost World",
+      "year": "1925",
+      "category": "classics",
+      "description": "Une expédition découvre des dinosaures vivants sur un plateau d'Amérique du Sud. Film d'aventure muet, pionnier des effets spéciaux.",
+      "poster": "https://archive.org/services/img/lost_world",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/lost_world/lost_world.mp4", "sizeMb": 405 },
+        { "name": "Éco", "url": "https://archive.org/download/lost_world/lost_world_512kb.mp4", "sizeMb": 283 }
+      ]
+    },
+    {
+      "id": "mclintok_widescreen",
+      "title": "McLintock!",
+      "year": "1963",
+      "category": "classics",
+      "description": "Un riche éleveur gère sa ville, ses troupeaux et un mariage explosif. Western avec John Wayne et Maureen O'Hara.",
+      "poster": "https://archive.org/services/img/mclintok_widescreen",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/mclintok_widescreen/McLintock.mp4", "sizeMb": 1482 },
+        { "name": "Éco", "url": "https://archive.org/download/mclintok_widescreen/McLintock_512kb.mp4", "sizeMb": 525 }
+      ]
+    },
+    {
+      "id": "Killers_from_space",
+      "title": "Killers From Space",
+      "year": "1954",
+      "category": "scifi",
+      "description": "Un scientifique ressuscité découvre une invasion extraterrestre planifiée dans les cavernes. Science-fiction B culte.",
+      "poster": "https://archive.org/services/img/Killers_from_space",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/Killers_from_space/Killers_from_space.mp4", "sizeMb": 423 },
+        { "name": "Éco", "url": "https://archive.org/download/Killers_from_space/Killers_from_space_512kb.mp4", "sizeMb": 295 }
+      ]
+    },
+    {
+      "id": "house_on_haunted_hill_ipod",
+      "title": "House on Haunted Hill",
+      "year": "1959",
+      "category": "scifi",
+      "description": "Cinq invités sont payés pour survivre une nuit dans une maison hantée. Épouvante classique avec Vincent Price.",
+      "poster": "https://archive.org/services/img/house_on_haunted_hill_ipod",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/house_on_haunted_hill_ipod/house_on_haunted_hill.mp4", "sizeMb": 805 },
+        { "name": "Éco", "url": "https://archive.org/download/house_on_haunted_hill_ipod/house_on_haunted_hill_512kb.mp4", "sizeMb": 303 }
+      ]
+    },
+    {
+      "id": "DasKabinettdesDoktorCaligariTheCabinetofDrCaligari",
+      "title": "The Cabinet of Dr. Caligari",
+      "year": "1919",
+      "category": "scifi",
+      "description": "Un hypnotiseur et son somnambule sèment la terreur. Chef-d'œuvre expressionniste allemand, décor en ovnis visuels.",
+      "poster": "https://archive.org/services/img/DasKabinettdesDoktorCaligariTheCabinetofDrCaligari",
+      "files": [
+        { "name": "HD", "url": "https://archive.org/download/DasKabinettdesDoktorCaligariTheCabinetofDrCaligari/The_Cabinet_of_Dr._Caligari_512kb.mp4", "sizeMb": 212 }
+      ]
+    }
+  ]
+}

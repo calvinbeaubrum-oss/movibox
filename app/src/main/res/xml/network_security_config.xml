@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bouclier anti-pub réseau : tout trafic en clair (HTTP) est interdit par le système.
+     Les seuls serveurs contactés sont ceux du catalogue, tous en HTTPS (archive.org). -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false" />
+</network-security-config>

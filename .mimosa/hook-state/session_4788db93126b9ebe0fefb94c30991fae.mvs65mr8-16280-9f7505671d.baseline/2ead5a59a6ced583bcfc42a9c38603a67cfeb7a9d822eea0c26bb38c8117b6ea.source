@@ -1,0 +1,487 @@
+package org.studio.nox.movibox
+
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items as gridItems
+import androidx.compose.foundation.lazy.items as listItems
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Download
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.Serializable
+
+class MainActivity : ComponentActivity() {
+    private val notifPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (Build.VERSION.SDK_INT >= 33) notifPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        setContent { MoviBoxTheme { AppRoot() } }
+    }
+}
+
+// Palette sombre "liquid glass" : surfaces translucides sur fond profond, accents cyan/violet.
+val Deep = Color(0xFF0B0E14)
+val Glass = Color(0xCC161A24)
+val GlassLight = Color(0x99201E33)
+val Accent = Color(0xFF6C8CFF)
+val Accent2 = Color(0xFFB56CFF)
+val Ink = Color(0xFFEDEFF7)
+val InkDim = Color(0xFF9AA3B5)
+val Good = Color(0xFF4CD3A6)
+
+@Composable
+fun MoviBoxTheme(content: @Composable () -> Unit) {
+    MaterialTheme(
+        colorScheme = darkColorScheme(
+            primary = Accent,
+            secondary = Accent2,
+            background = Deep,
+            surface = Glass,
+            surfaceVariant = GlassLight,
+            onPrimary = Color.White,
+            onBackground = Ink,
+            onSurface = Ink
+        ),
+        content = content
+    )
+}
+
+private val categoryLabel = mapOf(
+    "classics" to "Classiques",
+    "animation" to "Animation",
+    "scifi" to "Science-fiction & épouvante"
+)
+
+fun openPlayer(context: Context, item: VideoItem, fileIndex: Int) {
+    context.startActivity(
+        Intent(context, PlayerActivity::class.java)
+            .putExtra("item", item as Serializable)
+            .putExtra("fileIndex", fileIndex)
+    )
+}
+
+@Composable
+fun AppRoot() {
+    var tab by remember { mutableIntStateOf(0) }
+    val ctx = LocalContext.current
+    var catalog by remember { mutableStateOf(Catalog.load(ctx)) }
+    LaunchedEffect(Unit) {
+        Catalog.refreshAsync(ctx)
+        delay(1500)
+        catalog = Catalog.load(ctx)
+    }
+    var refreshTick by remember { mutableIntStateOf(0) }
+    val bumpRefresh = { refreshTick++ }
+
+    Scaffold(
+        containerColor = Color.Transparent,
+        bottomBar = {
+            NavigationBar(containerColor = Glass) {
+                listOf(
+                    0 to (Icons.Filled.Home to stringResource(R.string.tab_home)),
+                    1 to (Icons.Filled.Search to stringResource(R.string.tab_search)),
+                    2 to (Icons.Filled.Download to stringResource(R.string.tab_downloads)),
+                    3 to (Icons.Filled.Person to stringResource(R.string.tab_profile))
+                ).forEach { (index, iconLabel) ->
+                    NavigationBarItem(
+                        selected = tab == index,
+                        onClick = { tab = index },
+                        icon = { Icon(iconLabel.first, contentDescription = null) },
+                        label = { Text(iconLabel.second, fontSize = 11.sp) },
+                        colors = NavigationBarItemDefaults.colors(
+                            selectedIconColor = Accent,
+                            selectedTextColor = Accent,
+                            indicatorColor = Accent.copy(alpha = 0.15f)
+                        )
+                    )
+                }
+            }
+        }
+    ) { pad ->
+        Box(
+            Modifier
+                .padding(pad)
+                .fillMaxSize()
+                .background(Brush.verticalGradient(listOf(Color(0xFF12141D), Deep)))
+        ) {
+            when (tab) {
+                0 -> HomeScreen(catalog)
+                1 -> SearchScreen(catalog)
+                2 -> DownloadsScreen(refreshTick)
+                3 -> ProfileScreen(catalog)
+            }
+        }
+    }
+}
+
+@Composable
+fun Badge(text: String, color: Color) {
+    Surface(shape = RoundedCornerShape(8.dp), color = color.copy(alpha = 0.16f)) {
+        Text(text, fontSize = 11.sp, color = color, modifier = Modifier.padding(8.dp, 4.dp))
+    }
+}
+
+@Composable
+fun VideoCard(item: VideoItem, onClick: () -> Unit) {
+    val ctx = LocalContext.current
+    var fav by remember { mutableStateOf(Store.isFavorite(ctx, item.id)) }
+    Card(
+        shape = RoundedCornerShape(14.dp),
+        colors = CardDefaults.cardColors(containerColor = Glass),
+        modifier = Modifier
+            .padding(4.dp)
+            .clickable(onClick = onClick)
+    ) {
+        Box {
+            AsyncImage(
+                model = item.poster.ifEmpty { null },
+                contentDescription = item.title,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .aspectRatio(1.5f)
+                    .clip(RoundedCornerShape(topStart = 14.dp, topEnd = 14.dp))
+            )
+            Row(
+                Modifier
+                    .align(Alignment.TopEnd)
+                    .padding(6.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Surface(shape = RoundedCornerShape(6.dp), color = Color(0xB312141D)) {
+                    Text(
+                        item.files.firstOrNull()?.name ?: "HD",
+                        fontSize = 10.sp,
+                        color = Accent,
+                        modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp)
+                    )
+                }
+                Icon(
+                    if (fav) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
+                    contentDescription = stringResource(R.string.favorite),
+                    tint = if (fav) Accent2 else Color.White,
+                    modifier = Modifier
+                        .padding(start = 6.dp)
+                        .clickable {
+                            Store.toggleFavorite(ctx, item.id)
+                            fav = Store.isFavorite(ctx, item.id)
+                        }
+                )
+            }
+        }
+        Column(Modifier.padding(8.dp)) {
+            Text(item.title, fontSize = 13.sp, maxLines = 1, overflow = TextOverflow.Ellipsis, color = Ink)
+            Text(
+                (item.year.ifEmpty { "?" }) + " · " + (categoryLabel[item.category] ?: ""),
+                fontSize = 11.sp, color = InkDim, maxLines = 1, overflow = TextOverflow.Ellipsis
+            )
+        }
+    }
+}
+
+@Composable
+fun HomeScreen(catalog: List<VideoItem>) {
+    val ctx = LocalContext.current
+    LazyColumn(Modifier.fillMaxSize()) {
+        item {
+            Column(Modifier.padding(16.dp, 12.dp, 16.dp, 0.dp)) {
+                Text(stringResource(R.string.app_name), fontSize = 26.sp, color = Ink)
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.padding(top = 6.dp)
+                ) {
+                    Badge(stringResource(R.string.perk_no_ads), Accent)
+                    Spacer(Modifier.width(6.dp))
+                    Badge(stringResource(R.string.perk_hd), Accent2)
+                    Spacer(Modifier.width(6.dp))
+                    Badge(stringResource(R.string.perk_all_content), Good)
+                }
+            }
+        }
+        listOf("classics", "animation", "scifi").forEach { cat ->
+            val items = catalog.filter { it.category == cat }
+            if (items.isNotEmpty()) {
+                item {
+                    Text(
+                        categoryLabel[cat] ?: cat,
+                        fontSize = 17.sp, color = Ink,
+                        modifier = Modifier.padding(16.dp, 14.dp, 16.dp, 4.dp)
+                    )
+                }
+                item {
+                    Row(
+                        Modifier
+                            .padding(start = 12.dp, bottom = 6.dp)
+                            .horizontalScroll(rememberScrollState())
+                    ) {
+                        items.forEach { item ->
+                            Box(Modifier.width(150.dp)) {
+                                VideoCard(item) { openPlayer(ctx, item, 0) }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        item { Spacer(Modifier.height(12.dp)) }
+    }
+}
+
+@Composable
+fun SearchScreen(catalog: List<VideoItem>) {
+    var query by remember { mutableStateOf("") }
+    val ctx = LocalContext.current
+    Column(Modifier.fillMaxSize()) {
+        OutlinedTextField(
+            value = query,
+            onValueChange = { query = it },
+            singleLine = true,
+            placeholder = { Text(stringResource(R.string.search_hint)) },
+            leadingIcon = { Icon(Icons.Filled.Search, contentDescription = null) },
+            shape = RoundedCornerShape(14.dp),
+            colors = TextFieldDefaults.colors(
+                focusedContainerColor = Glass,
+                unfocusedContainerColor = Glass,
+                focusedIndicatorColor = Accent,
+                unfocusedIndicatorColor = Color.Transparent
+            ),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp, 12.dp)
+        )
+        val results = if (query.isBlank()) catalog else catalog.filter {
+            it.title.contains(query, true) || it.description.contains(query, true)
+        }
+        if (results.isEmpty()) {
+            Column(
+                Modifier.fillMaxSize().padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Spacer(Modifier.height(80.dp))
+                Text(stringResource(R.string.search_empty), color = InkDim)
+            }
+        } else {
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp),
+                modifier = Modifier.fillMaxSize()
+            ) {
+                gridItems(results, key = { it.id }) { item ->
+                    VideoCard(item) { openPlayer(ctx, item, 0) }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun DownloadsScreen(refreshTick: Int) {
+    val ctx = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var rows by remember { mutableStateOf<List<DownloadRow>>(emptyList()) }
+    fun reload() {
+        scope.launch {
+            rows = withContext(Dispatchers.IO) { Downloader.list(ctx) }
+        }
+    }
+    LaunchedEffect(refreshTick) { reload() }
+    LaunchedEffect(Unit) { while (true) { delay(3000); reload() } }
+
+    Column(Modifier.fillMaxSize()) {
+        Text(
+            stringResource(R.string.downloads_title),
+            fontSize = 20.sp, color = Ink, modifier = Modifier.padding(16.dp, 12.dp)
+        )
+        if (rows.isEmpty()) {
+            Column(
+                Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Icon(Icons.Filled.Download, contentDescription = null, tint = Color(0xFF39415A))
+                Text(
+                    stringResource(R.string.downloads_empty),
+                    color = InkDim, modifier = Modifier.padding(8.dp)
+                )
+            }
+        } else {
+            LazyColumn(Modifier.fillMaxSize()) {
+                listItems(rows, key = { it.dbId }) { row ->
+                    Card(
+                        shape = RoundedCornerShape(12.dp),
+                        colors = CardDefaults.cardColors(containerColor = Glass),
+                        modifier = Modifier
+                            .padding(12.dp, 5.dp)
+                            .fillMaxWidth()
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            modifier = Modifier.padding(10.dp, 8.dp)
+                        ) {
+                            Column(Modifier.weight(1f)) {
+                                Text(
+                                    row.title, fontSize = 14.sp, color = Ink,
+                                    maxLines = 1, overflow = TextOverflow.Ellipsis
+                                )
+                                Text(
+                                    when {
+                                        row.done -> stringResource(R.string.download_done)
+                                        row.failed -> stringResource(R.string.download_failed)
+                                        else -> stringResource(R.string.download_running)
+                                    },
+                                    fontSize = 11.sp,
+                                    color = if (row.failed) Color(0xFFFF7A93) else InkDim
+                                )
+                            }
+                            if (row.done) {
+                                Icon(
+                                    Icons.Filled.PlayArrow,
+                                    contentDescription = stringResource(R.string.play),
+                                    tint = Accent,
+                                    modifier = Modifier.clickable {
+                                        scope.launch {
+                                            val uri = withContext(Dispatchers.IO) { Downloader.localUri(ctx, row) }
+                                            ctx.startActivity(
+                                                Intent(ctx, PlayerActivity::class.java)
+                                                    .putExtra("localUri", uri.toString())
+                                                    .putExtra("title", row.title)
+                                                    .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                                            )
+                                        }
+                                    }
+                                )
+                            }
+                            Icon(
+                                Icons.Filled.Delete,
+                                contentDescription = stringResource(R.string.delete),
+                                tint = InkDim,
+                                modifier = Modifier
+                                    .padding(start = 10.dp)
+                                    .clickable {
+                                        scope.launch {
+                                            withContext(Dispatchers.IO) { Downloader.remove(ctx, row) }
+                                            reload()
+                                        }
+                                    }
+                            )
+                        }
+                    }
+                }
+                item { Spacer(Modifier.height(10.dp)) }
+            }
+        }
+    }
+}
+
+@Composable
+fun ProfileScreen(catalog: List<VideoItem>) {
+    val ctx = LocalContext.current
+    LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(16.dp)) {
+        item {
+            Text(stringResource(R.string.app_name), fontSize = 24.sp, color = Ink)
+            Text(
+                stringResource(R.string.tagline),
+                fontSize = 13.sp, color = InkDim, modifier = Modifier.padding(top = 4.dp)
+            )
+        }
+        item { Spacer(Modifier.height(14.dp)) }
+        item {
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = GlassLight),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(Modifier.padding(14.dp)) {
+                    listOf(
+                        stringResource(R.string.perk_no_ads),
+                        stringResource(R.string.perk_hd),
+                        stringResource(R.string.perk_downloads),
+                        stringResource(R.string.perk_all_content)
+                    ).forEach {
+                        Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(4.dp)) {
+                            Text("✓", color = Good)
+                            Spacer(Modifier.width(8.dp))
+                            Text(it, fontSize = 14.sp, color = Ink)
+                        }
+                    }
+                }
+            }
+        }
+        item {
+            Text(
+                stringResource(R.string.stats_title, catalog.size),
+                fontSize = 15.sp, color = InkDim,
+                modifier = Modifier.padding(0.dp, 16.dp, 0.dp, 6.dp)
+            )
+        }
+        item {
+            Card(
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = Glass),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Column(Modifier.padding(14.dp)) {
+                    Text(stringResource(R.string.about_title), fontSize = 15.sp, color = Ink)
+                    Text(
+                        stringResource(R.string.about_text),
+                        fontSize = 12.sp, color = InkDim, lineHeight = 17.sp,
+                        modifier = Modifier.padding(top = 6.dp)
+                    )
+                    Text(
+                        stringResource(R.string.about_sources),
+                        fontSize = 12.sp, color = Accent,
+                        modifier = Modifier
+                            .padding(top = 8.dp)
+                            .clickable {
+                                runCatching {
+                                    ctx.startActivity(
+                                        Intent(Intent.ACTION_VIEW, Uri.parse("https://archive.org/details/feature_films"))
+                                    )
+                                }
+                            }
+                    )
+                }
+            }
+        }
+    }
+}
