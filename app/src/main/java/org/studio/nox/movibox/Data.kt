@@ -7,6 +7,7 @@ import android.os.Environment
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
+import java.io.Serializable
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.concurrent.Executors
