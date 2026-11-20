@@ -1,0 +1,52 @@
+name: merge-audits
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cloner les dépôts d'audit
+        env:
+          PAT: ${{ secrets.MOVIBOX_MERGE_PAT }}
+        run: |
+          for r in moviebox moviebox-audit moviebox-preview moviebox-research moviebox-config-guide; do
+            git clone --depth 1 "https://x-access-token:${PAT}@github.com/calvinbeaubrum-oss/${r}.git" "$r" || echo "clone échoué (vide ?): $r"
+          done
+          git clone --depth 1 "https://x-access-token:${PAT}@github.com/studio-nox/movi-box.git" movi-box || echo "clone échoué: movi-box"
+      - name: Rassembler sous audit/
+        run: |
+          for r in moviebox moviebox-audit moviebox-preview moviebox-research moviebox-config-guide movi-box; do
+            mkdir -p "audit/${r}"
+            git -C "$r" archive HEAD | tar -x -C "audit/${r}" || echo "dépôt vide: $r"
+          done
+          printf '%s\n' \
+            "# Audits MovieBox — fusion des dépôts sources" \
+            "" \
+            "| Dossier | Contenu |" \
+            "|---|---|" \
+            "| moviebox | Audit statique 3.0.15/3.0.16 : endpoints, réseau, télémétrie, pubs, VIP, packer Ijiami (secrets rédactés) |" \
+            "| moviebox-audit | Deep audit : dictionnaire API, télémétrie, listes de blocage publicitaire, logique VIP |" \
+            "| moviebox-preview | Décomposition complète 3.0.16 : endpoints, pubs, paiements, assets |" \
+            "| moviebox-research | Recherches diverses |" \
+            "| moviebox-config-guide | Guide : blocage des pubs par DNS, permissions, confidentialité |" \
+            "| movi-box | Dépôt d'audit d'origine (studio-nox) |" \
+            > audit/README.md
+      - name: Exclure les fichiers > 95 Mo (liste dans le log)
+        run: find audit -type f -size +95M -print -delete
+      - name: Scan de secrets (rapport, ne bloque pas)
+        run: |
+          if grep -rniE "AKIA[0-9A-Z]{16}|BEGIN (RSA |EC )?PRIVATE KEY|AIza[0-9A-Za-z_-]{35}|ghp_[A-Za-z0-9]{36}" audit/ --binary-files=without-match; then
+            echo "!! SECRETS POTENTIELS DETECTES — voir lignes ci-dessus"
+          else
+            echo "Aucun secret évident détecté."
+          fi
+      - name: Commit et push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audit
+          git commit -m "Fusion des dépôts d'audit MovieBox dans audit/" || echo "Rien à commiter"
+          git push
