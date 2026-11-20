@@ -1,0 +1,19 @@
+package com.amazonaws.services.s3.model.inventory;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public enum InventoryIncludedObjectVersions {
+    All("All"),
+    Current("Current");
+
+    private final String name;
+
+    InventoryIncludedObjectVersions(String str) {
+        this.name = str;
+    }
+
+    @Override // java.lang.Enum
+    public String toString() {
+        return this.name;
+    }
+}

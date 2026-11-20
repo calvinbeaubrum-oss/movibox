@@ -1,0 +1,11 @@
+package com.google.android.gms.internal.p002authapiphone;
+
+import android.os.IInterface;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public interface zzj extends IInterface {
+    void zzb(Status status) throws RemoteException;
+}

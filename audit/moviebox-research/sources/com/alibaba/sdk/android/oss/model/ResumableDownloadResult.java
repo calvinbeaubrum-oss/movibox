@@ -1,0 +1,15 @@
+package com.alibaba.sdk.android.oss.model;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public class ResumableDownloadResult extends OSSResult {
+    private ObjectMetadata metadata;
+
+    public ObjectMetadata getMetadata() {
+        return this.metadata;
+    }
+
+    public void setMetadata(ObjectMetadata objectMetadata) {
+        this.metadata = objectMetadata;
+    }
+}

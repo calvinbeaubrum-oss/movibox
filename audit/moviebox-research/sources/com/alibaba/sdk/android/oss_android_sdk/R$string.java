@@ -1,0 +1,10 @@
+package com.alibaba.sdk.android.oss_android_sdk;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public final class R$string {
+    public static int app_name = 2131951750;
+
+    private R$string() {
+    }
+}

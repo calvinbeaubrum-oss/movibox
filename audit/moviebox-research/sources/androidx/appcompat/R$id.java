@@ -1,0 +1,91 @@
+package androidx.appcompat;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes.dex */
+public final class R$id {
+    public static int action_bar = 2131361887;
+    public static int action_bar_activity_content = 2131361888;
+    public static int action_bar_container = 2131361889;
+    public static int action_bar_root = 2131361890;
+    public static int action_bar_spinner = 2131361891;
+    public static int action_bar_subtitle = 2131361892;
+    public static int action_bar_title = 2131361893;
+    public static int action_context_bar = 2131361896;
+    public static int action_menu_divider = 2131361899;
+    public static int action_menu_presenter = 2131361900;
+    public static int action_mode_bar = 2131361901;
+    public static int action_mode_bar_stub = 2131361902;
+    public static int action_mode_close_button = 2131361903;
+    public static int activity_chooser_view_content = 2131361907;
+    public static int add = 2131361952;
+    public static int alertTitle = 2131362001;
+    public static int buttonPanel = 2131362190;
+    public static int checkbox = 2131362230;
+    public static int checked = 2131362231;
+    public static int content = 2131362320;
+    public static int contentPanel = 2131362324;
+    public static int custom = 2131362351;
+    public static int customPanel = 2131362352;
+    public static int decor_content_parent = 2131362360;
+    public static int default_activity_button = 2131362361;
+    public static int edit_query = 2131362424;
+    public static int expand_activities_button = 2131362526;
+    public static int expanded_menu = 2131362527;
+    public static int group_divider = 2131362689;
+    public static int home = 2131362728;
+    public static int icon = 2131362744;
+    public static int image = 2131362764;
+    public static int listMode = 2131363287;
+    public static int list_item = 2131363289;
+    public static int message = 2131363673;
+    public static int multiply = 2131363728;
+    public static int none = 2131363781;
+    public static int normal = 2131363783;
+    public static int off = 2131363811;
+
+    /* JADX INFO: renamed from: on, reason: collision with root package name */
+    public static int f659on = 2131363815;
+    public static int parentPanel = 2131363866;
+    public static int progress_circular = 2131363943;
+    public static int progress_horizontal = 2131363945;
+    public static int radio = 2131363961;
+    public static int screen = 2131364108;
+    public static int scrollIndicatorDown = 2131364110;
+    public static int scrollIndicatorUp = 2131364111;
+    public static int scrollView = 2131364112;
+    public static int search_badge = 2131364118;
+    public static int search_bar = 2131364119;
+    public static int search_button = 2131364120;
+    public static int search_close_btn = 2131364121;
+    public static int search_edit_frame = 2131364123;
+    public static int search_go_btn = 2131364125;
+    public static int search_mag_icon = 2131364145;
+    public static int search_plate = 2131364146;
+    public static int search_src_text = 2131364180;
+    public static int search_voice_btn = 2131364181;
+    public static int select_dialog_listview = 2131364191;
+    public static int shortcut = 2131364208;
+    public static int spacer = 2131364240;
+    public static int split_action_bar = 2131364246;
+    public static int src_atop = 2131364251;
+    public static int src_in = 2131364252;
+    public static int src_over = 2131364253;
+    public static int submenuarrow = 2131364356;
+    public static int submit_area = 2131364358;
+    public static int tabMode = 2131364382;
+    public static int textSpacerNoButtons = 2131364417;
+    public static int textSpacerNoTitle = 2131364418;
+    public static int title = 2131364444;
+    public static int titleDividerNoCustom = 2131364451;
+    public static int title_template = 2131364461;
+    public static int topPanel = 2131364477;
+    public static int unchecked = 2131365105;
+    public static int uniform = 2131365106;
+
+    /* JADX INFO: renamed from: up, reason: collision with root package name */
+    public static int f660up = 2131365108;
+    public static int wrap_content = 2131365386;
+
+    private R$id() {
+    }
+}

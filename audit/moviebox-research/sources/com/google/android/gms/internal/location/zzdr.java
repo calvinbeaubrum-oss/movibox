@@ -1,0 +1,13 @@
+package com.google.android.gms.internal.location;
+
+import com.google.android.gms.common.api.internal.ListenerHolder;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public interface zzdr {
+    ListenerHolder zza();
+
+    void zzb(ListenerHolder listenerHolder);
+
+    void zzc();
+}

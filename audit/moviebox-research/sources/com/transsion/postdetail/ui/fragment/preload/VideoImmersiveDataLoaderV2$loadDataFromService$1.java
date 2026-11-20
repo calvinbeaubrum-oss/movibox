@@ -1,0 +1,248 @@
+package com.transsion.postdetail.ui.fragment.preload;
+
+import androidx.core.view.MotionEventCompat;
+import com.tn.lib.net.bean.BaseDto;
+import com.transsion.moviedetailapi.bean.PostSubjectBean;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.functions.Function3;
+import kotlin.jvm.internal.Intrinsics;
+import kotlinx.coroutines.flow.b;
+import kotlinx.coroutines.flow.c;
+import kotlinx.coroutines.k0;
+import kotlinx.coroutines.w0;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:31)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+@Metadata
+@DebugMetadata(c = "com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1", f = "VideoImmersiveDataLoaderV2.kt", l = {MotionEventCompat.AXIS_GENERIC_12}, m = "invokeSuspend")
+public final class VideoImmersiveDataLoaderV2$loadDataFromService$1 extends SuspendLambda implements Function2<k0, Continuation<? super Unit>, Object> {
+    int label;
+    final /* synthetic */ VideoImmersiveDataLoaderV2 this$0;
+
+    /* JADX INFO: renamed from: com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1$1, reason: invalid class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    @DebugMetadata(c = "com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1$1", f = "VideoImmersiveDataLoaderV2.kt", l = {32, 34, 36}, m = "invokeSuspend")
+    public static final class AnonymousClass1 extends SuspendLambda implements Function2<b<? super PostSubjectBean>, Continuation<? super Unit>, Object> {
+        private /* synthetic */ Object L$0;
+        int label;
+        final /* synthetic */ VideoImmersiveDataLoaderV2 this$0;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public AnonymousClass1(VideoImmersiveDataLoaderV2 videoImmersiveDataLoaderV2, Continuation<? super AnonymousClass1> continuation) {
+            super(2, continuation);
+            this.this$0 = videoImmersiveDataLoaderV2;
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.this$0, continuation);
+            anonymousClass1.L$0 = obj;
+            return anonymousClass1;
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(b<? super PostSubjectBean> bVar, Continuation<? super Unit> continuation) {
+            return ((AnonymousClass1) create(bVar, continuation)).invokeSuspend(Unit.f68710a);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) throws Throwable {
+            b bVar;
+            Object objE = kotlin.coroutines.intrinsics.a.e();
+            int i11 = this.label;
+            if (i11 != 0) {
+                if (i11 == 1) {
+                    bVar = (b) this.L$0;
+                    ResultKt.b(obj);
+                } else {
+                    if (i11 != 2 && i11 != 3) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ResultKt.b(obj);
+                }
+                return Unit.f68710a;
+            }
+            ResultKt.b(obj);
+            bVar = (b) this.L$0;
+            xv.b bVarO = this.this$0.o();
+            String strA = cp.a.f62775a.a();
+            String strN = this.this$0.n();
+            String strL = this.this$0.l();
+            int iM = this.this$0.m();
+            this.L$0 = bVar;
+            this.label = 1;
+            obj = bVarO.g(strA, strN, strL, iM, this);
+            if (obj == objE) {
+                return objE;
+            }
+            BaseDto baseDto = (BaseDto) obj;
+            if (Intrinsics.b(baseDto.getCode(), "0")) {
+                Object data = baseDto.getData();
+                this.L$0 = null;
+                this.label = 3;
+                if (bVar.emit(data, this) == objE) {
+                    return objE;
+                }
+            } else {
+                this.L$0 = null;
+                this.label = 2;
+                if (bVar.emit(null, this) == objE) {
+                    return objE;
+                }
+            }
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX INFO: renamed from: com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1$2, reason: invalid class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    @DebugMetadata(c = "com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1$2", f = "VideoImmersiveDataLoaderV2.kt", l = {39}, m = "invokeSuspend")
+    public static final class AnonymousClass2 extends SuspendLambda implements Function3<b<? super PostSubjectBean>, Throwable, Continuation<? super Unit>, Object> {
+        private /* synthetic */ Object L$0;
+        int label;
+
+        public AnonymousClass2(Continuation<? super AnonymousClass2> continuation) {
+            super(3, continuation);
+        }
+
+        @Override // kotlin.jvm.functions.Function3
+        public final Object invoke(b<? super PostSubjectBean> bVar, Throwable th2, Continuation<? super Unit> continuation) {
+            AnonymousClass2 anonymousClass2 = new AnonymousClass2(continuation);
+            anonymousClass2.L$0 = bVar;
+            return anonymousClass2.invokeSuspend(Unit.f68710a);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) throws Throwable {
+            Object objE = kotlin.coroutines.intrinsics.a.e();
+            int i11 = this.label;
+            if (i11 == 0) {
+                ResultKt.b(obj);
+                b bVar = (b) this.L$0;
+                this.label = 1;
+                if (bVar.emit(null, this) == objE) {
+                    return objE;
+                }
+            } else {
+                if (i11 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                ResultKt.b(obj);
+            }
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX INFO: renamed from: com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1$3, reason: invalid class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    @DebugMetadata(c = "com.transsion.postdetail.ui.fragment.preload.VideoImmersiveDataLoaderV2$loadDataFromService$1$3", f = "VideoImmersiveDataLoaderV2.kt", l = {}, m = "invokeSuspend")
+    public static final class AnonymousClass3 extends SuspendLambda implements Function3<b<? super PostSubjectBean>, Throwable, Continuation<? super Unit>, Object> {
+        /* synthetic */ Object L$0;
+        int label;
+        final /* synthetic */ VideoImmersiveDataLoaderV2 this$0;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public AnonymousClass3(VideoImmersiveDataLoaderV2 videoImmersiveDataLoaderV2, Continuation<? super AnonymousClass3> continuation) {
+            super(3, continuation);
+            this.this$0 = videoImmersiveDataLoaderV2;
+        }
+
+        @Override // kotlin.jvm.functions.Function3
+        public final Object invoke(b<? super PostSubjectBean> bVar, Throwable th2, Continuation<? super Unit> continuation) {
+            AnonymousClass3 anonymousClass3 = new AnonymousClass3(this.this$0, continuation);
+            anonymousClass3.L$0 = th2;
+            return anonymousClass3.invokeSuspend(Unit.f68710a);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) throws Throwable {
+            kotlin.coroutines.intrinsics.a.e();
+            if (this.label != 0) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.b(obj);
+            Throwable th2 = (Throwable) this.L$0;
+            uo.b.a aVar = uo.b.f78622a;
+            String TAG = this.this$0.b();
+            Intrinsics.f(TAG, "TAG");
+            uo.b.a.f(aVar, TAG, String.valueOf(th2.getMessage()), false, 4, null);
+            this.this$0.c(null);
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    public static final class a<T> implements b {
+
+        /* JADX INFO: renamed from: a, reason: collision with root package name */
+        public final /* synthetic */ VideoImmersiveDataLoaderV2 f55923a;
+
+        public a(VideoImmersiveDataLoaderV2 videoImmersiveDataLoaderV2) {
+            this.f55923a = videoImmersiveDataLoaderV2;
+        }
+
+        @Override // kotlinx.coroutines.flow.b
+        /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+        public final Object emit(PostSubjectBean postSubjectBean, Continuation<? super Unit> continuation) {
+            this.f55923a.d(postSubjectBean);
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public VideoImmersiveDataLoaderV2$loadDataFromService$1(VideoImmersiveDataLoaderV2 videoImmersiveDataLoaderV2, Continuation<? super VideoImmersiveDataLoaderV2$loadDataFromService$1> continuation) {
+        super(2, continuation);
+        this.this$0 = videoImmersiveDataLoaderV2;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new VideoImmersiveDataLoaderV2$loadDataFromService$1(this.this$0, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(k0 k0Var, Continuation<? super Unit> continuation) {
+        return ((VideoImmersiveDataLoaderV2$loadDataFromService$1) create(k0Var, continuation)).invokeSuspend(Unit.f68710a);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) throws Throwable {
+        Object objE = kotlin.coroutines.intrinsics.a.e();
+        int i11 = this.label;
+        if (i11 == 0) {
+            ResultKt.b(obj);
+            kotlinx.coroutines.flow.a aVarE = c.e(c.e(c.q(c.o(new AnonymousClass1(this.this$0, null)), w0.b()), new AnonymousClass2(null)), new AnonymousClass3(this.this$0, null));
+            a aVar = new a(this.this$0);
+            this.label = 1;
+            if (aVarE.a(aVar, this) == objE) {
+                return objE;
+            }
+        } else {
+            if (i11 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.b(obj);
+        }
+        return Unit.f68710a;
+    }
+}

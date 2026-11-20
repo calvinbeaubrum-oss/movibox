@@ -1,0 +1,12 @@
+package androidx.media3.decoder;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes2.dex */
+public class CryptoException extends Exception {
+    public final int errorCode;
+
+    public CryptoException(int i11, String str) {
+        super(str);
+        this.errorCode = i11;
+    }
+}

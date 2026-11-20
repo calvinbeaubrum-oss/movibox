@@ -1,0 +1,11 @@
+package com.google.android.gms.iid;
+
+import android.os.IInterface;
+import android.os.Message;
+import android.os.RemoteException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public interface zzl extends IInterface {
+    void send(Message message) throws RemoteException;
+}

@@ -1,0 +1,11 @@
+package com.github.lzyzsd.jsbridge;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes4.dex */
+public interface WebViewJavascriptBridge {
+    void sendToWeb(String str);
+
+    void sendToWeb(String str, OnBridgeCallback onBridgeCallback);
+
+    void sendToWeb(String str, Object... objArr);
+}

@@ -1,0 +1,11 @@
+package com.google.android.gms.internal.maps;
+
+import android.os.IInterface;
+import android.os.RemoteException;
+import com.google.android.gms.maps.model.Tile;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public interface zzaf extends IInterface {
+    Tile getTile(int i11, int i12, int i13) throws RemoteException;
+}

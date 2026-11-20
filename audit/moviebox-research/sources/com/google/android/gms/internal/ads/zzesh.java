@@ -1,0 +1,14 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzesh implements zzhhd {
+    public static zzesh zza() {
+        return zzesg.zza;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhhu
+    public final /* synthetic */ Object zzb() {
+        return new zzesf();
+    }
+}

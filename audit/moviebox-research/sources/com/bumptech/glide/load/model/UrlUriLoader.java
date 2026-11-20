@@ -1,0 +1,45 @@
+package com.bumptech.glide.load.model;
+
+import android.net.Uri;
+import androidx.annotation.NonNull;
+import com.bumptech.glide.load.Options;
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.http.HttpHost;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public class UrlUriLoader<Data> implements ModelLoader<Uri, Data> {
+    private static final Set<String> SCHEMES = Collections.unmodifiableSet(new HashSet(Arrays.asList(HttpHost.DEFAULT_SCHEME_NAME, "https")));
+    private final ModelLoader<GlideUrl, Data> urlLoader;
+
+    /* JADX INFO: compiled from: source.java */
+    public static class StreamFactory implements ModelLoaderFactory<Uri, InputStream> {
+        @Override // com.bumptech.glide.load.model.ModelLoaderFactory
+        @NonNull
+        public ModelLoader<Uri, InputStream> build(MultiModelLoaderFactory multiModelLoaderFactory) {
+            return new UrlUriLoader(multiModelLoaderFactory.build(GlideUrl.class, InputStream.class));
+        }
+
+        @Override // com.bumptech.glide.load.model.ModelLoaderFactory
+        public void teardown() {
+        }
+    }
+
+    public UrlUriLoader(ModelLoader<GlideUrl, Data> modelLoader) {
+        this.urlLoader = modelLoader;
+    }
+
+    @Override // com.bumptech.glide.load.model.ModelLoader
+    public ModelLoader.LoadData<Data> buildLoadData(@NonNull Uri uri, int i11, int i12, @NonNull Options options) {
+        return this.urlLoader.buildLoadData(new GlideUrl(uri.toString()), i11, i12, options);
+    }
+
+    @Override // com.bumptech.glide.load.model.ModelLoader
+    public boolean handles(@NonNull Uri uri) {
+        return SCHEMES.contains(uri.getScheme());
+    }
+}

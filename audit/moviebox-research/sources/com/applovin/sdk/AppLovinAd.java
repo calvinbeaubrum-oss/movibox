@@ -1,0 +1,23 @@
+package com.applovin.sdk;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public interface AppLovinAd {
+    @Deprecated
+    long getAdIdNumber();
+
+    @Deprecated
+    String getAdValue(String str);
+
+    @Deprecated
+    String getAdValue(String str, String str2);
+
+    AppLovinAdSize getSize();
+
+    AppLovinAdType getType();
+
+    String getZoneId();
+
+    @Deprecated
+    boolean isVideoAd();
+}

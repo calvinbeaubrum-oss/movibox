@@ -1,0 +1,17 @@
+package com.google.android.libraries.places.api.model;
+
+import android.os.Parcelable;
+import androidx.annotation.RecentlyNonNull;
+import java.util.List;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class AddressComponents implements Parcelable {
+    @RecentlyNonNull
+    public static AddressComponents newInstance(@RecentlyNonNull List<AddressComponent> list) {
+        return new zzam(list);
+    }
+
+    @RecentlyNonNull
+    public abstract List<AddressComponent> asList();
+}

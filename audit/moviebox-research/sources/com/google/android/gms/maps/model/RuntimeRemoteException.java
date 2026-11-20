@@ -1,0 +1,11 @@
+package com.google.android.gms.maps.model;
+
+import android.os.RemoteException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class RuntimeRemoteException extends RuntimeException {
+    public RuntimeRemoteException(RemoteException remoteException) {
+        super(remoteException);
+    }
+}

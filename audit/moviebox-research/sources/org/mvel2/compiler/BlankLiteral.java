@@ -1,0 +1,35 @@
+package org.mvel2.compiler;
+
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.Collection;
+import t30.m;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+public class BlankLiteral implements Serializable {
+    public static final BlankLiteral INSTANCE = new BlankLiteral();
+
+    public boolean equals(Object obj) {
+        if (obj == null || String.valueOf(obj).trim().length() == 0) {
+            return true;
+        }
+        if (m.j0(obj)) {
+            return "0".equals(String.valueOf(obj));
+        }
+        if (obj instanceof Collection) {
+            return ((Collection) obj).size() == 0;
+        }
+        if (obj.getClass().isArray()) {
+            return Array.getLength(obj) == 0;
+        }
+        if (obj instanceof Boolean) {
+            return !((Boolean) obj).booleanValue();
+        }
+        return false;
+    }
+
+    public String toString() {
+        return "";
+    }
+}

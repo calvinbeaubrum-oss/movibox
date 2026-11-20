@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "application": "MovieBox (com.community.oneroom) v3.0.05.0711.03 — APK historique NON PACKÉE récupérée du dépôt solo12345689/moviebox-internal-api (commit 9ff0f816)",
+    "apk_sha256": "d8dcbe2708b82e44729cd17d2e0439b0a79b9cde19797d830c646048b0650739",
+    "apk_taille": "65 598 677 octets",
+    "jadx": "1.5.6 — 31 731 classes, 38 995 fichiers .java (17 007 erreurs partielles)",
+    "priorite_renommage": "com.transsion.* (réseau, API, auth, config) — référence : OFFICIAL_API_DOCUMENTATION.md du dépôt ; le code décompilé fait foi",
+    "portee_refactoring": "8 fichiers prioritaires annotés et renommés (cible réaliste sur 39 000 fichiers) ; le reste est documenté au glossaire",
+    "securite": "session_mbox.json de l'auteur du dépôt : jamais lu, jamais copié (consigne)"
+  },
+  "protocole": {
+    "gateway_sign": {
+      "header": "x-tr-signature",
+      "format": "<timestamp_corrigé>|2|<base64(hmac-md5(canonical))>",
+      "canonical": "METHOD\\n accept\\n content-type\\n content-length\\n timestamp\\n md5(body[0..102400])\\n path?query_trié",
+      "secret_source": "meta-data manifeste gateway_secret_online / gateway_secret_test (base64)",
+      "classe": "GatewaySignManager.doSign + GatewayInterceptor.doGzipOrSign",
+      "resync_horloge": "réponse 500 GW.4410 → TimeBean dans errorMsg → time_offset stocké, puis retentative"
+    },
+    "client_token": {
+      "header": "X-Client-Token",
+      "format": "<timestamp_ms>,<md5(reverse(timestamp_ms))>",
+      "classe": "LoginInterceptor (client non connecté) ; sinon Authorization: Bearer <token>"
+    },
+    "hosts_api": {
+      "passerelle": "apigateway.tmctool.com",
+      "quic_hints": ["api3.aoneroom.com", "api4.aoneroom.com", "api4sg.aoneroom.com", "api5.aoneroom.com", "api6.aoneroom.com", "api6sg.aoneroom.com", "api.inmoviebox.com", "test-mse-api.aoneroom.com (STAGING dans l'APK de prod)"],
+      "chemins_signes": ["/gateway/metric/add", "/gateway/sdk/v1/config"]
+    }
+  },
+  "renommages_cibles": {
+    "com.transsion.baselib.net.LoginInterceptor": {
+      "nouveau_nom": "ClientAuthInterceptor",
+      "f51221b": "Companion",
+      "f51222a": "loginApiLazy",
+      "a()": "buildClientToken() — ts,md5(reverse(ts))",
+      "b()": "loginApi() — service ARouter ILoginApi"
+    },
+    "com.transsion.api.gateway.utils.EncoderUtil": {
+      "EncoderByAlgorithm": "hashByAlgorithm"
+    }
+  },
+  "classes_cle": {
+    "com.transsion.api.gateway.GateWaySdk": "Singleton gateway : hôte apigateway.tmctool.com, secret via meta-data, WorkMode TEST/ONLINE, OkHttp + GatewayInterceptor, chemins signés",
+    "com.transsion.api.gateway.GatewaySignManager": "Signature x-tr-signature (canonical + HMAC-MD5) et resync GW.4410",
+    "com.transsion.api.gateway.interceptor.GatewayInterceptor": "Intercepteur OkHttp : réécriture d'hôte, DNS gateway, signature, failover multi-stratégies, gzip metrics",
+    "com.tn.lib.net.manager.NetServiceGenerator": "Fabrique réseau : Cronet/QUIC hints cluster aoneroom, SSL permissif hp.a, DynamicHostInterceptor, proxy debug",
+    "com.transsion.subroom.app.SubRoomApp": "Application principale (même classe que celle masquée par le packer 3.0.16) : config distante, player, MMKV, reporting",
+    "com.transsion.crypto.TCrypterSdk": "Façade crypto Transsion — logique réelle dans packages obfusqués ys/zs",
+    "com.transsion.baselib.net.LoginInterceptor": "Auth BFF : X-Client-Token invité / Bearer connecté",
+    "com.transsion.api.gateway.utils.EncoderUtil": "MD5/SHA hex (corps de signature)"
+  },
+  "packages_obfusques_connus": {
+    "ys / zs": "SDK crypto Transsion (cible TCrypterSdk) — non résolus",
+    "qp.a": "helper md5 utilisé par buildClientToken",
+    "ap.a": "traitement du token Bearer avant injection",
+    "hp.a": "fabrique SSL permissive + hostnameVerifier permissif (risque : accepte tout certificat)",
+    "a..zz / OooO*": "code applicatif ProGuard-obfusqué (majorité des 39 000 fichiers)"
+  }
+}

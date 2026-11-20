@@ -1,0 +1,20 @@
+package com.google.android.gms.measurement.internal;
+
+import android.content.Context;
+import com.google.android.gms.common.internal.Preconditions;
+import com.google.android.gms.common.util.VisibleForTesting;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+@VisibleForTesting
+public final class zzku {
+    final Context zza;
+
+    @VisibleForTesting
+    public zzku(Context context) {
+        Preconditions.checkNotNull(context);
+        Context applicationContext = context.getApplicationContext();
+        Preconditions.checkNotNull(applicationContext);
+        this.zza = applicationContext;
+    }
+}

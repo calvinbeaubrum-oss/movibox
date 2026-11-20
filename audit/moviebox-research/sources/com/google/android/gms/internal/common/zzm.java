@@ -1,0 +1,14 @@
+package com.google.android.gms.internal.common;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+abstract class zzm extends zzk {
+    private final String zza = "CharMatcher.none()";
+
+    public zzm(String str) {
+    }
+
+    public final String toString() {
+        return this.zza;
+    }
+}

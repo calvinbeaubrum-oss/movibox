@@ -1,0 +1,7 @@
+package j1;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes2.dex */
+public interface a<I, O> {
+    O apply(I i11);
+}

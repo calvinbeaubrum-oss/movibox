@@ -1,0 +1,47 @@
+package ty;
+
+import com.transsion.upload.bean.UploadTstTokenStorageType;
+import kotlin.Metadata;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:31)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata
+public interface a {
+
+    /* JADX INFO: renamed from: ty.a$a, reason: collision with other inner class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    public static final class C0857a {
+        public static /* synthetic */ void a(a aVar, String str, String str2, String str3, UploadTstTokenStorageType uploadTstTokenStorageType, int i11, Object obj) {
+            if (obj != null) {
+                throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: onFailure");
+            }
+            if ((i11 & 2) != 0) {
+                str2 = null;
+            }
+            if ((i11 & 4) != 0) {
+                str3 = null;
+            }
+            if ((i11 & 8) != 0) {
+                uploadTstTokenStorageType = null;
+            }
+            aVar.c(str, str2, str3, uploadTstTokenStorageType);
+        }
+    }
+
+    void a(String str, long j11, long j12);
+
+    void b(String str, String str2, String str3);
+
+    void c(String str, String str2, String str3, UploadTstTokenStorageType uploadTstTokenStorageType);
+}

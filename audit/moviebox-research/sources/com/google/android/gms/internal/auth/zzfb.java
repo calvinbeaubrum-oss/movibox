@@ -1,0 +1,19 @@
+package com.google.android.gms.internal.auth;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzfb extends zzfc {
+    @Override // com.google.android.gms.internal.auth.zzfc
+    public final boolean equals(Object obj) {
+        throw null;
+    }
+
+    @Override // com.google.android.gms.internal.auth.zzfc
+    public final int hashCode() {
+        throw null;
+    }
+
+    public final String toString() {
+        throw null;
+    }
+}

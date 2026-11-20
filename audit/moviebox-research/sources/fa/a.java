@@ -1,0 +1,64 @@
+package fa;
+
+import android.text.TextUtils;
+import android.util.Log;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+import java.math.BigDecimal;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes4.dex */
+public class a extends TypeAdapter<BigDecimal> {
+
+    /* JADX INFO: renamed from: fa.a$a, reason: collision with other inner class name */
+    /* JADX INFO: compiled from: source.java */
+    public static /* synthetic */ class C0671a {
+
+        /* JADX INFO: renamed from: a, reason: collision with root package name */
+        public static final /* synthetic */ int[] f64742a;
+
+        static {
+            int[] iArr = new int[JsonToken.values().length];
+            f64742a = iArr;
+            try {
+                iArr[JsonToken.NUMBER.ordinal()] = 1;
+            } catch (NoSuchFieldError unused) {
+            }
+            try {
+                f64742a[JsonToken.STRING.ordinal()] = 2;
+            } catch (NoSuchFieldError unused2) {
+            }
+        }
+    }
+
+    @Override // com.google.gson.TypeAdapter
+    /* JADX INFO: renamed from: read, reason: avoid collision after fix types in other method */
+    public BigDecimal read2(JsonReader jsonReader) throws IOException {
+        if (jsonReader == null) {
+            return null;
+        }
+        int i11 = C0671a.f64742a[jsonReader.peek().ordinal()];
+        if (i11 != 1 && i11 != 2) {
+            jsonReader.skipValue();
+            return null;
+        }
+        String strNextString = jsonReader.nextString();
+        if (TextUtils.isEmpty(strNextString)) {
+            return null;
+        }
+        try {
+            return new BigDecimal(strNextString);
+        } catch (Exception e11) {
+            Log.getStackTraceString(e11);
+            return null;
+        }
+    }
+
+    @Override // com.google.gson.TypeAdapter
+    public void write(JsonWriter jsonWriter, BigDecimal bigDecimal) throws IOException {
+        jsonWriter.value(bigDecimal);
+    }
+}

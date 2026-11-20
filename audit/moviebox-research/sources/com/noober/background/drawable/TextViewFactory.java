@@ -1,0 +1,13 @@
+package com.noober.background.drawable;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.TextView;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes.dex */
+public class TextViewFactory {
+    public static void setTextGradientColor(Context context, AttributeSet attributeSet, TextView textView) {
+        new TextViewGradientColor().invoke(context, attributeSet, textView);
+    }
+}

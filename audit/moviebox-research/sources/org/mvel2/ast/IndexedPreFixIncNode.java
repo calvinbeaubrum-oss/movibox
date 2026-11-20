@@ -1,0 +1,30 @@
+package org.mvel2.ast;
+
+import org.mvel2.ParserContext;
+import org.mvel2.integration.VariableResolver;
+import org.mvel2.integration.VariableResolverFactory;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+public class IndexedPreFixIncNode extends ASTNode {
+    private int register;
+
+    public IndexedPreFixIncNode(int i11, ParserContext parserContext) {
+        super(parserContext);
+        this.register = i11;
+        this.egressType = parserContext.getVarOrInputType(parserContext.getIndexedVarNames()[i11]);
+    }
+
+    @Override // org.mvel2.ast.ASTNode
+    public Object getReducedValue(Object obj, Object obj2, VariableResolverFactory variableResolverFactory) {
+        return getReducedValueAccelerated(obj, obj2, variableResolverFactory);
+    }
+
+    @Override // org.mvel2.ast.ASTNode
+    public Object getReducedValueAccelerated(Object obj, Object obj2, VariableResolverFactory variableResolverFactory) {
+        VariableResolver indexedVariableResolver = variableResolverFactory.getIndexedVariableResolver(this.register);
+        Object objF = n30.a.f(indexedVariableResolver.getValue(), 0, 101, 1);
+        indexedVariableResolver.setValue(objF);
+        return objF;
+    }
+}

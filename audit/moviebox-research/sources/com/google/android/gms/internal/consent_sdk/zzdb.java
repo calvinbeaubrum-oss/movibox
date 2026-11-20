@@ -1,0 +1,17 @@
+package com.google.android.gms.internal.consent_sdk;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzdb extends zzcy {
+    private final zzdd zza;
+
+    public zzdb(zzdd zzddVar, int i11) {
+        super(zzddVar.size(), i11);
+        this.zza = zzddVar;
+    }
+
+    @Override // com.google.android.gms.internal.consent_sdk.zzcy
+    public final Object zza(int i11) {
+        return this.zza.get(i11);
+    }
+}

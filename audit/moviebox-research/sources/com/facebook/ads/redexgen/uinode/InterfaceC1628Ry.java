@@ -1,0 +1,9 @@
+package com.facebook.ads.redexgen.uinode;
+
+import java.util.Map;
+
+/* JADX INFO: renamed from: com.facebook.ads.redexgen.X.Ry, reason: case insensitive filesystem */
+/* JADX INFO: loaded from: assets/audience_network.dex */
+public interface InterfaceC1628Ry {
+    Map<String, String> A6x();
+}

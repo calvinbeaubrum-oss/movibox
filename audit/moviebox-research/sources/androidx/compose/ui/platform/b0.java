@@ -1,0 +1,48 @@
+package androidx.compose.ui.platform;
+
+import android.view.View;
+import android.view.translation.ViewTranslationCallback;
+import androidx.annotation.RequiresApi;
+import com.vungle.warren.error.VungleException;
+import kotlin.Metadata;
+import kotlin.jvm.internal.Intrinsics;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes2.dex */
+@RequiresApi(VungleException.WEB_CRASH)
+@Metadata
+public final class b0 implements ViewTranslationCallback {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public static final b0 f5433a = new b0();
+
+    @Override // android.view.translation.ViewTranslationCallback
+    public boolean onClearTranslation(View view) {
+        Intrinsics.e(view, "null cannot be cast to non-null type androidx.compose.ui.platform.AndroidComposeView");
+        ((AndroidComposeView) view).getContentCaptureManager$ui_release().n();
+        return true;
+    }
+
+    @Override // android.view.translation.ViewTranslationCallback
+    public boolean onHideTranslation(View view) {
+        Intrinsics.e(view, "null cannot be cast to non-null type androidx.compose.ui.platform.AndroidComposeView");
+        ((AndroidComposeView) view).getContentCaptureManager$ui_release().p();
+        return true;
+    }
+
+    @Override // android.view.translation.ViewTranslationCallback
+    public boolean onShowTranslation(View view) {
+        Intrinsics.e(view, "null cannot be cast to non-null type androidx.compose.ui.platform.AndroidComposeView");
+        ((AndroidComposeView) view).getContentCaptureManager$ui_release().s();
+        return true;
+    }
+}

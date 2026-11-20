@@ -1,0 +1,33 @@
+package com.mbridge.msdk.newreward.function.d.c;
+
+import android.text.TextUtils;
+import com.mbridge.msdk.foundation.entity.CampaignEx;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public final class g extends b {
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    private u f46353b;
+
+    public g(com.mbridge.msdk.newreward.function.d.a.b bVar, com.mbridge.msdk.newreward.function.d.a.a aVar) {
+        super(bVar, aVar);
+        this.f46353b = new u(a(), b(), this);
+    }
+
+    @Override // com.mbridge.msdk.newreward.function.d.c.o
+    public final int h() {
+        return 2;
+    }
+
+    @Override // com.mbridge.msdk.newreward.function.d.c.a, com.mbridge.msdk.newreward.function.d.c.o
+    public final String j() {
+        CampaignEx campaignExG;
+        return (b() == null || (campaignExG = b().g()) == null || campaignExG.getRewardTemplateMode() == null || TextUtils.isEmpty(campaignExG.getRewardTemplateMode().e())) ? "" : campaignExG.getRewardTemplateMode().e();
+    }
+
+    @Override // com.mbridge.msdk.newreward.function.d.c.a, com.mbridge.msdk.newreward.function.d.c.o
+    public final q k() {
+        return this.f46353b;
+    }
+}

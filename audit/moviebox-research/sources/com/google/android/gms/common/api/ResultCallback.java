@@ -1,0 +1,10 @@
+package com.google.android.gms.common.api;
+
+import androidx.annotation.NonNull;
+import com.google.android.gms.common.api.Result;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public interface ResultCallback<R extends Result> {
+    void onResult(@NonNull R r11);
+}

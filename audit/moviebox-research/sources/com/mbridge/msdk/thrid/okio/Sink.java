@@ -1,0 +1,18 @@
+package com.mbridge.msdk.thrid.okio;
+
+import java.io.Closeable;
+import java.io.Flushable;
+import java.io.IOException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public interface Sink extends Closeable, Flushable {
+    @Override // java.io.Closeable, java.lang.AutoCloseable
+    void close() throws IOException;
+
+    void flush() throws IOException;
+
+    Timeout timeout();
+
+    void write(Buffer buffer, long j11) throws IOException;
+}

@@ -1,0 +1,15 @@
+package com.google.android.libraries.places.internal;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzagv implements zzaty {
+    static final zzaty zza = new zzagv();
+
+    private zzagv() {
+    }
+
+    @Override // com.google.android.libraries.places.internal.zzaty
+    public final boolean zza(int i11) {
+        return i11 == 0 || i11 == 1 || i11 == 2;
+    }
+}

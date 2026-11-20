@@ -1,0 +1,11 @@
+package com.amazonaws.services.s3.model.analytics;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public interface AnalyticsPredicateVisitor {
+    void a(AnalyticsPrefixPredicate analyticsPrefixPredicate);
+
+    void b(AnalyticsTagPredicate analyticsTagPredicate);
+
+    void c(AnalyticsAndOperator analyticsAndOperator);
+}

@@ -1,0 +1,68 @@
+package com.transsnet.downloader.fragment.ad;
+
+import com.transsion.ad.middle.WrapperAdListener;
+import com.transsion.ad.middle.icon.WrapperIconAdManager;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.k0;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata
+@DebugMetadata(c = "com.transsnet.downloader.fragment.ad.AppDownloadAdFragment$loadDefaultData$1", f = "AppDownloadAdFragment.kt", l = {122}, m = "invokeSuspend")
+public final class AppDownloadAdFragment$loadDefaultData$1 extends SuspendLambda implements Function2<k0, Continuation<? super Unit>, Object> {
+    int label;
+    final /* synthetic */ AppDownloadAdFragment this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public AppDownloadAdFragment$loadDefaultData$1(AppDownloadAdFragment appDownloadAdFragment, Continuation<? super AppDownloadAdFragment$loadDefaultData$1> continuation) {
+        super(2, continuation);
+        this.this$0 = appDownloadAdFragment;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new AppDownloadAdFragment$loadDefaultData$1(this.this$0, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(k0 k0Var, Continuation<? super Unit> continuation) {
+        return ((AppDownloadAdFragment$loadDefaultData$1) create(k0Var, continuation)).invokeSuspend(Unit.f68710a);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) throws Throwable {
+        Object objE = kotlin.coroutines.intrinsics.a.e();
+        int i11 = this.label;
+        if (i11 == 0) {
+            ResultKt.b(obj);
+            WrapperIconAdManager wrapperIconAdManager = this.this$0.f60887o;
+            int iH = wq.a.h(wq.a.f79581a, "DownloadCenterAppDistributionScene", 0, 2, null);
+            WrapperAdListener wrapperAdListener = this.this$0.f60889q;
+            this.label = 1;
+            if (wrapperIconAdManager.loadIconAd("DownloadCenterAppDistributionScene", true, iH, wrapperAdListener, this) == objE) {
+                return objE;
+            }
+        } else {
+            if (i11 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.b(obj);
+        }
+        return Unit.f68710a;
+    }
+}

@@ -1,0 +1,13 @@
+package com.mbridge.msdk.playercommon.exoplayer2.source.chunk;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public final class ChunkHolder {
+    public Chunk chunk;
+    public boolean endOfStream;
+
+    public final void clear() {
+        this.chunk = null;
+        this.endOfStream = false;
+    }
+}

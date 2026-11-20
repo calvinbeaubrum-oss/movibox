@@ -1,0 +1,13 @@
+package com.amazonaws.services.cognitoidentity.model;
+
+import com.amazonaws.AmazonServiceException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public class NotAuthorizedException extends AmazonServiceException {
+    private static final long serialVersionUID = 1;
+
+    public NotAuthorizedException(String str) {
+        super(str);
+    }
+}

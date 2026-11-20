@@ -1,0 +1,19 @@
+package com.google.android.gms.maps;
+
+import com.google.android.gms.maps.internal.zzao;
+import com.google.android.gms.maps.model.LatLng;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzz extends zzao {
+    private final /* synthetic */ GoogleMap.OnMapLongClickListener zzah;
+
+    public zzz(GoogleMap googleMap, GoogleMap.OnMapLongClickListener onMapLongClickListener) {
+        this.zzah = onMapLongClickListener;
+    }
+
+    @Override // com.google.android.gms.maps.internal.zzan
+    public final void onMapLongClick(LatLng latLng) {
+        this.zzah.onMapLongClick(latLng);
+    }
+}

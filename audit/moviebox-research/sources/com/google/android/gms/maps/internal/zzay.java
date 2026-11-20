@@ -1,0 +1,23 @@
+package com.google.android.gms.maps.internal;
+
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.dynamic.IObjectWrapper;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class zzay extends com.google.android.gms.internal.maps.zzb implements zzax {
+    public zzay() {
+        super("com.google.android.gms.maps.internal.IOnMyLocationChangeListener");
+    }
+
+    @Override // com.google.android.gms.internal.maps.zzb
+    public final boolean dispatchTransaction(int i11, Parcel parcel, Parcel parcel2, int i12) throws RemoteException {
+        if (i11 != 1) {
+            return false;
+        }
+        zza(IObjectWrapper.Stub.asInterface(parcel.readStrongBinder()));
+        parcel2.writeNoException();
+        return true;
+    }
+}

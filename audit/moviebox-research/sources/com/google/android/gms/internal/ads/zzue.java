@@ -1,0 +1,18 @@
+package com.google.android.gms.internal.ads;
+
+import android.content.Context;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzue implements zzvd {
+    private final zzud zzc;
+    private final zzgv zzd;
+
+    public zzue(Context context, zzadb zzadbVar) {
+        zzhc zzhcVar = new zzhc(context);
+        this.zzd = zzhcVar;
+        zzud zzudVar = new zzud(zzadbVar);
+        this.zzc = zzudVar;
+        zzudVar.zza(zzhcVar);
+    }
+}

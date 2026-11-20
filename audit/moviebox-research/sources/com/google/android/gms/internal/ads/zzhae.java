@@ -1,0 +1,45 @@
+package com.google.android.gms.internal.ads;
+
+import com.mbridge.msdk.playercommon.exoplayer2.C;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzhae {
+    static final Charset zza = Charset.forName(C.ASCII_NAME);
+    static final Charset zzb = Charset.forName("UTF-8");
+    static final Charset zzc = Charset.forName("ISO-8859-1");
+    public static final byte[] zzd;
+    public static final ByteBuffer zze;
+    public static final zzgyt zzf;
+
+    static {
+        byte[] bArr = new byte[0];
+        zzd = bArr;
+        zze = ByteBuffer.wrap(bArr);
+        zzf = zzgyt.zzI(bArr, 0, 0, false);
+    }
+
+    public static int zza(boolean z11) {
+        return z11 ? 1231 : 1237;
+    }
+
+    public static int zzb(int i11, byte[] bArr, int i12, int i13) {
+        for (int i14 = i12; i14 < i12 + i13; i14++) {
+            i11 = (i11 * 31) + bArr[i14];
+        }
+        return i11;
+    }
+
+    public static Object zzc(Object obj, String str) {
+        if (obj != null) {
+            return obj;
+        }
+        throw new NullPointerException("messageType");
+    }
+
+    public static String zzd(byte[] bArr) {
+        return new String(bArr, zzb);
+    }
+}

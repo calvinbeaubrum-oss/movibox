@@ -1,0 +1,25 @@
+package com.facebook.ads.redexgen.uinode;
+
+import android.view.View;
+
+/* JADX INFO: renamed from: com.facebook.ads.redexgen.X.Mu, reason: case insensitive filesystem */
+/* JADX INFO: loaded from: assets/audience_network.dex */
+public class ViewOnClickListenerC1494Mu implements View.OnClickListener {
+    public final /* synthetic */ U6 A00;
+
+    public ViewOnClickListenerC1494Mu(U6 u11) {
+        this.A00 = u11;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) throws Throwable {
+        if (KL.A02(this)) {
+            return;
+        }
+        try {
+            this.A00.A0B.ACI(C2U.A03);
+        } catch (Throwable th2) {
+            KL.A00(th2, this);
+        }
+    }
+}

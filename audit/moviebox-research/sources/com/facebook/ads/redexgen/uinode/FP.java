@@ -1,0 +1,68 @@
+package com.facebook.ads.redexgen.uinode;
+
+import com.mbridge.msdk.playercommon.exoplayer2.C;
+import java.util.Arrays;
+
+/* JADX INFO: loaded from: assets/audience_network.dex */
+public final class FP {
+    public static String[] A05 = {"uUgQSQgVsgHH0N1UsfY", "sl", "7AFLCGuL9JRzl", "SUkqvXm6rFeJNlyU4q2", "DM2QNBARzQjqq5KTyec", "OFwEtNlY3tfCjSjl1W0mAcBM0ytDkhEA", "Uou0zfuAqjYMYyC", "2ZbfYqEAzIBMf"};
+    public static final FP A06 = new FP(new long[0]);
+    public final int A00;
+    public final long A01;
+    public final long A02;
+    public final long[] A03;
+    public final FN[] A04;
+
+    public FP(long... jArr) {
+        int length = jArr.length;
+        this.A00 = length;
+        this.A03 = Arrays.copyOf(jArr, length);
+        this.A04 = new FN[length];
+        for (int i11 = 0; i11 < length; i11++) {
+            this.A04[i11] = new FN();
+        }
+        this.A01 = 0L;
+        this.A02 = C.TIME_UNSET;
+    }
+
+    public final int A00(long j11) {
+        int i11 = 0;
+        while (true) {
+            long[] jArr = this.A03;
+            if (i11 >= jArr.length) {
+                break;
+            }
+            long j12 = jArr[i11];
+            if (j12 == Long.MIN_VALUE) {
+                break;
+            }
+            if (A05[5].charAt(14) == 'w') {
+                throw new RuntimeException();
+            }
+            A05[5] = "JOT1DKN2kTxJVBU4QbvAyq2E38ICiTh6";
+            if (j11 < j12 && this.A04[i11].A02()) {
+                break;
+            }
+            i11++;
+        }
+        if (i11 < this.A03.length) {
+            return i11;
+        }
+        return -1;
+    }
+
+    public final int A01(long j11) {
+        int length = this.A03.length - 1;
+        while (length >= 0) {
+            long j12 = this.A03[length];
+            if (j12 != Long.MIN_VALUE && j12 <= j11) {
+                break;
+            }
+            length--;
+        }
+        if (length < 0 || !this.A04[length].A02()) {
+            return -1;
+        }
+        return length;
+    }
+}

@@ -1,0 +1,56 @@
+package com.google.android.gms.internal.ads;
+
+import android.os.Bundle;
+import android.text.TextUtils;
+import androidx.annotation.Nullable;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzexg implements zzexp {
+    public final boolean zza;
+    public final boolean zzb;
+    public final String zzc;
+    public final boolean zzd;
+    public final int zze;
+    public final int zzf;
+    public final int zzg;
+
+    @Nullable
+    public final String zzh;
+
+    public zzexg(boolean z11, boolean z12, String str, boolean z13, int i11, int i12, int i13, @Nullable String str2) {
+        this.zza = z11;
+        this.zzb = z12;
+        this.zzc = str;
+        this.zzd = z13;
+        this.zze = i11;
+        this.zzf = i12;
+        this.zzg = i13;
+        this.zzh = str2;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzexp
+    public final /* bridge */ /* synthetic */ void zzj(Object obj) {
+        Bundle bundle = (Bundle) obj;
+        bundle.putString("js", this.zzc);
+        bundle.putBoolean("is_nonagon", true);
+        bundle.putString("extra_caps", (String) com.google.android.gms.ads.internal.client.zzba.zzc().zza(zzbgc.zzdB));
+        bundle.putInt("target_api", this.zze);
+        bundle.putInt("dv", this.zzf);
+        bundle.putInt("lv", this.zzg);
+        if (((Boolean) com.google.android.gms.ads.internal.client.zzba.zzc().zza(zzbgc.zzfV)).booleanValue() && !TextUtils.isEmpty(this.zzh)) {
+            bundle.putString("ev", this.zzh);
+        }
+        Bundle bundleZza = zzfhv.zza(bundle, "sdk_env");
+        bundleZza.putBoolean("mf", ((Boolean) zzbia.zza.zze()).booleanValue());
+        bundleZza.putBoolean("instant_app", this.zza);
+        bundleZza.putBoolean("lite", this.zzb);
+        bundleZza.putBoolean("is_privileged_process", this.zzd);
+        bundle.putBundle("sdk_env", bundleZza);
+        Bundle bundleZza2 = zzfhv.zza(bundleZza, "build_meta");
+        bundleZza2.putString("cl", "610756093");
+        bundleZza2.putString("rapid_rc", "dev");
+        bundleZza2.putString("rapid_rollup", "HEAD");
+        bundleZza.putBundle("build_meta", bundleZza2);
+    }
+}

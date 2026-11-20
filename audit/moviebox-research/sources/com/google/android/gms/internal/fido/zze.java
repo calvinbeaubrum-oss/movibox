@@ -1,0 +1,13 @@
+package com.google.android.gms.internal.fido;
+
+import android.os.IInterface;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public interface zze extends IInterface {
+    void zzb(boolean z11) throws RemoteException;
+
+    void zzc(Status status) throws RemoteException;
+}

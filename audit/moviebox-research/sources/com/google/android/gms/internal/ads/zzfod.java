@@ -1,0 +1,23 @@
+package com.google.android.gms.internal.ads;
+
+import android.view.View;
+import androidx.annotation.Nullable;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class zzfod {
+    public static zzfod zza(zzfoe zzfoeVar, zzfof zzfofVar) {
+        if (zzfob.zzb()) {
+            return new zzfoh(zzfoeVar, zzfofVar);
+        }
+        throw new IllegalStateException("Method called before OM SDK activation");
+    }
+
+    public abstract void zzb(View view, zzfok zzfokVar, @Nullable String str);
+
+    public abstract void zzc();
+
+    public abstract void zzd(View view);
+
+    public abstract void zze();
+}

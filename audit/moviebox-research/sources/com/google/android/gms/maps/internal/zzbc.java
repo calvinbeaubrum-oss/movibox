@@ -1,0 +1,23 @@
+package com.google.android.gms.maps.internal;
+
+import android.os.Parcel;
+import android.os.RemoteException;
+import com.google.android.gms.maps.model.PointOfInterest;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class zzbc extends com.google.android.gms.internal.maps.zzb implements zzbb {
+    public zzbc() {
+        super("com.google.android.gms.maps.internal.IOnPoiClickListener");
+    }
+
+    @Override // com.google.android.gms.internal.maps.zzb
+    public final boolean dispatchTransaction(int i11, Parcel parcel, Parcel parcel2, int i12) throws RemoteException {
+        if (i11 != 1) {
+            return false;
+        }
+        zza((PointOfInterest) com.google.android.gms.internal.maps.zzc.zza(parcel, PointOfInterest.CREATOR));
+        parcel2.writeNoException();
+        return true;
+    }
+}

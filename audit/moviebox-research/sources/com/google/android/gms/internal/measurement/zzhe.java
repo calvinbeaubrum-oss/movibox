@@ -1,0 +1,21 @@
+package com.google.android.gms.internal.measurement;
+
+import android.database.ContentObserver;
+import android.os.Handler;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzhe extends ContentObserver {
+    final /* synthetic */ zzhf zza;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zzhe(zzhf zzhfVar, Handler handler) {
+        super(null);
+        this.zza = zzhfVar;
+    }
+
+    @Override // android.database.ContentObserver
+    public final void onChange(boolean z11) {
+        this.zza.zzf();
+    }
+}

@@ -1,0 +1,18 @@
+package com.google.android.gms.maps.model;
+
+import com.google.android.gms.internal.maps.zzag;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzt extends zzag {
+    private final /* synthetic */ TileProvider zzen;
+
+    public zzt(TileOverlayOptions tileOverlayOptions, TileProvider tileProvider) {
+        this.zzen = tileProvider;
+    }
+
+    @Override // com.google.android.gms.internal.maps.zzaf
+    public final Tile getTile(int i11, int i12, int i13) {
+        return this.zzen.getTile(i11, i12, i13);
+    }
+}

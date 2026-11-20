@@ -1,0 +1,10 @@
+package com.alibaba.android.arouter.facade.template;
+
+import com.alibaba.android.arouter.facade.model.RouteMeta;
+import java.util.Map;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes.dex */
+public interface IRouteGroup {
+    void loadInto(Map<String, RouteMeta> map);
+}

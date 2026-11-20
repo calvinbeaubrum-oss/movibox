@@ -1,0 +1,53 @@
+package com.google.android.gms.internal.ads;
+
+import android.util.JsonWriter;
+import androidx.core.app.NotificationCompat;
+import com.google.android.gms.common.util.Clock;
+import com.mbridge.msdk.foundation.entity.CampaignEx;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.Iterator;
+import java.util.List;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzdwr {
+    private final Clock zza;
+
+    public zzdwr(Clock clock) {
+        this.zza = clock;
+    }
+
+    public final void zza(List list, String str, String str2, Object... objArr) {
+        if (((Boolean) zzbid.zza.zze()).booleanValue()) {
+            long jCurrentTimeMillis = this.zza.currentTimeMillis();
+            StringWriter stringWriter = new StringWriter();
+            JsonWriter jsonWriter = new JsonWriter(stringWriter);
+            try {
+                jsonWriter.beginObject();
+                jsonWriter.name(CampaignEx.JSON_KEY_TIMESTAMP).value(jCurrentTimeMillis);
+                jsonWriter.name("source").value(str);
+                jsonWriter.name(NotificationCompat.CATEGORY_EVENT).value(str2);
+                jsonWriter.name("components").beginArray();
+                Iterator it = list.iterator();
+                while (it.hasNext()) {
+                    jsonWriter.value(it.next().toString());
+                }
+                jsonWriter.endArray();
+                jsonWriter.name("params").beginArray();
+                int length = objArr.length;
+                for (int i11 = 0; i11 < length; i11++) {
+                    Object obj = objArr[i11];
+                    jsonWriter.value(obj != null ? obj.toString() : null);
+                }
+                jsonWriter.endArray();
+                jsonWriter.endObject();
+                jsonWriter.flush();
+                jsonWriter.close();
+            } catch (IOException e11) {
+                zzcec.zzh("unable to log", e11);
+            }
+            zzcec.zzi("AD-DBG ".concat(String.valueOf(stringWriter.toString())));
+        }
+    }
+}

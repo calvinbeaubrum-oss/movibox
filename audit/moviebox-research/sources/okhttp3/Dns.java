@@ -1,0 +1,63 @@
+package okhttp3;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.collections.d;
+import kotlin.jvm.JvmField;
+import kotlin.jvm.internal.DefaultConstructorMarker;
+import kotlin.jvm.internal.Intrinsics;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:31)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata
+public interface Dns {
+    public static final Companion Companion = new Companion(null);
+
+    @JvmField
+    public static final Dns SYSTEM = new Companion.DnsSystem();
+
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    public static final class Companion {
+        static final /* synthetic */ Companion $$INSTANCE = null;
+
+        /* JADX INFO: compiled from: source.java */
+        @Metadata
+        public static final class DnsSystem implements Dns {
+            @Override // okhttp3.Dns
+            public List<InetAddress> lookup(String hostname) throws UnknownHostException {
+                Intrinsics.g(hostname, "hostname");
+                try {
+                    InetAddress[] allByName = InetAddress.getAllByName(hostname);
+                    Intrinsics.f(allByName, "InetAddress.getAllByName(hostname)");
+                    return d.A0(allByName);
+                } catch (NullPointerException e11) {
+                    UnknownHostException unknownHostException = new UnknownHostException("Broken system behaviour for dns lookup of " + hostname);
+                    unknownHostException.initCause(e11);
+                    throw unknownHostException;
+                }
+            }
+        }
+
+        private Companion() {
+        }
+
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+    }
+
+    List<InetAddress> lookup(String str) throws UnknownHostException;
+}

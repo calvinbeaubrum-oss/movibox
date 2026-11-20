@@ -1,0 +1,6 @@
+# Binaires exclus du dépôt (les hashes figurent dans MANIFEST.md)
+*.apk
+*.so
+*.dex
+*.zip
+*.jadx

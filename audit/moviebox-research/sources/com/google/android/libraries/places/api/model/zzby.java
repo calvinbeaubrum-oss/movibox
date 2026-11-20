@@ -1,0 +1,15 @@
+package com.google.android.libraries.places.api.model;
+
+import android.os.Parcelable;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class zzby implements Parcelable {
+    public static zzbx zzc() {
+        return new zzi();
+    }
+
+    public abstract int zza();
+
+    public abstract int zzb();
+}

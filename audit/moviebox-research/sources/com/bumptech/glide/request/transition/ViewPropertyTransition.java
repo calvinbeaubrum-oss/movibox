@@ -1,0 +1,27 @@
+package com.bumptech.glide.request.transition;
+
+import android.view.View;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public class ViewPropertyTransition<R> implements Transition<R> {
+    private final Animator animator;
+
+    /* JADX INFO: compiled from: source.java */
+    public interface Animator {
+        void animate(View view);
+    }
+
+    public ViewPropertyTransition(Animator animator) {
+        this.animator = animator;
+    }
+
+    @Override // com.bumptech.glide.request.transition.Transition
+    public boolean transition(R r11, Transition.ViewAdapter viewAdapter) {
+        if (viewAdapter.getView() == null) {
+            return false;
+        }
+        this.animator.animate(viewAdapter.getView());
+        return false;
+    }
+}

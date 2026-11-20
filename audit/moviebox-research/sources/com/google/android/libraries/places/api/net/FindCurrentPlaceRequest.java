@@ -1,0 +1,53 @@
+package com.google.android.libraries.places.api.net;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RecentlyNonNull;
+import androidx.annotation.RecentlyNullable;
+import com.google.android.gms.tasks.CancellationToken;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.internal.zzjt;
+import com.google.android.libraries.places.internal.zznx;
+import java.util.List;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class FindCurrentPlaceRequest implements zzjt {
+
+    /* JADX INFO: compiled from: source.java */
+    public static abstract class Builder {
+        @RecentlyNonNull
+        public FindCurrentPlaceRequest build() {
+            zza(zznx.zzj(zzb().getPlaceFields()));
+            return zzb();
+        }
+
+        @RecentlyNullable
+        public abstract CancellationToken getCancellationToken();
+
+        @RecentlyNonNull
+        public abstract Builder setCancellationToken(@Nullable CancellationToken cancellationToken);
+
+        public abstract Builder zza(List list);
+
+        public abstract FindCurrentPlaceRequest zzb();
+    }
+
+    @RecentlyNonNull
+    public static Builder builder(@RecentlyNonNull List<Place.Field> list) {
+        zzq zzqVar = new zzq();
+        zzqVar.zza(list);
+        return zzqVar;
+    }
+
+    @RecentlyNonNull
+    public static FindCurrentPlaceRequest newInstance(@RecentlyNonNull List<Place.Field> list) {
+        return builder(list).build();
+    }
+
+    @Override // com.google.android.libraries.places.internal.zzjt
+    @RecentlyNullable
+    public abstract CancellationToken getCancellationToken();
+
+    @RecentlyNonNull
+    public abstract List<Place.Field> getPlaceFields();
+}

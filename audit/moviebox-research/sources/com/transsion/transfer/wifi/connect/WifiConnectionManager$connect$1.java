@@ -1,0 +1,111 @@
+package com.transsion.transfer.wifi.connect;
+
+import com.transsion.transfer.wifi.util.f;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlinx.coroutines.CoroutineDispatcher;
+import kotlinx.coroutines.h;
+import kotlinx.coroutines.k0;
+import kotlinx.coroutines.r0;
+import kotlinx.coroutines.w0;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:31)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+@Metadata
+@DebugMetadata(c = "com.transsion.transfer.wifi.connect.WifiConnectionManager$connect$1", f = "WifiConnectionManager.kt", l = {104}, m = "invokeSuspend")
+public final class WifiConnectionManager$connect$1 extends SuspendLambda implements Function2<k0, Continuation<? super Unit>, Object> {
+    int label;
+
+    /* JADX INFO: renamed from: com.transsion.transfer.wifi.connect.WifiConnectionManager$connect$1$1, reason: invalid class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    @DebugMetadata(c = "com.transsion.transfer.wifi.connect.WifiConnectionManager$connect$1$1", f = "WifiConnectionManager.kt", l = {106}, m = "invokeSuspend")
+    public static final class AnonymousClass1 extends SuspendLambda implements Function2<k0, Continuation<? super Unit>, Object> {
+        int label;
+
+        public AnonymousClass1(Continuation<? super AnonymousClass1> continuation) {
+            super(2, continuation);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            return new AnonymousClass1(continuation);
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(k0 k0Var, Continuation<? super Unit> continuation) {
+            return ((AnonymousClass1) create(k0Var, continuation)).invokeSuspend(Unit.f68710a);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) throws Throwable {
+            Object objE = kotlin.coroutines.intrinsics.a.e();
+            int i11 = this.label;
+            if (i11 == 0) {
+                ResultKt.b(obj);
+                this.label = 1;
+                if (r0.a(500L, this) == objE) {
+                    return objE;
+                }
+            } else {
+                if (i11 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                ResultKt.b(obj);
+            }
+            WifiConnectionManager.f59120a.q();
+            f.f59249a.a();
+            return Unit.f68710a;
+        }
+    }
+
+    public WifiConnectionManager$connect$1(Continuation<? super WifiConnectionManager$connect$1> continuation) {
+        super(2, continuation);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new WifiConnectionManager$connect$1(continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(k0 k0Var, Continuation<? super Unit> continuation) {
+        return ((WifiConnectionManager$connect$1) create(k0Var, continuation)).invokeSuspend(Unit.f68710a);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) throws Throwable {
+        Object objE = kotlin.coroutines.intrinsics.a.e();
+        int i11 = this.label;
+        if (i11 == 0) {
+            ResultKt.b(obj);
+            CoroutineDispatcher coroutineDispatcherB = w0.b();
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1(null);
+            this.label = 1;
+            if (h.g(coroutineDispatcherB, anonymousClass1, this) == objE) {
+                return objE;
+            }
+        } else {
+            if (i11 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.b(obj);
+        }
+        return Unit.f68710a;
+    }
+}

@@ -1,0 +1,18 @@
+package com.amazonaws;
+
+import com.amazonaws.internal.config.HttpClientConfig;
+import com.amazonaws.internal.config.InternalConfig;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+enum ServiceNameFactory {
+    ;
+
+    public static String getServiceName(String str) {
+        HttpClientConfig httpClientConfigH = InternalConfig.Factory.a().h(str);
+        if (httpClientConfigH == null) {
+            return null;
+        }
+        return httpClientConfigH.a();
+    }
+}

@@ -1,0 +1,13 @@
+package androidx.work.impl.utils;
+
+import androidx.annotation.NonNull;
+import java.util.concurrent.Executor;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes2.dex */
+public class r implements Executor {
+    @Override // java.util.concurrent.Executor
+    public void execute(@NonNull Runnable runnable) {
+        runnable.run();
+    }
+}

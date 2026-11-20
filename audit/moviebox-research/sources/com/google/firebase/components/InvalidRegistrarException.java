@@ -1,0 +1,13 @@
+package com.google.firebase.components;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes.dex */
+public class InvalidRegistrarException extends RuntimeException {
+    public InvalidRegistrarException(String str) {
+        super(str);
+    }
+
+    public InvalidRegistrarException(String str, Throwable th2) {
+        super(str, th2);
+    }
+}

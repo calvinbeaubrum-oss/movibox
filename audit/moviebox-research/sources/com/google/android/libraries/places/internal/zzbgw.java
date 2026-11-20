@@ -1,0 +1,20 @@
+package com.google.android.libraries.places.internal;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzbgw implements Runnable {
+    final /* synthetic */ zzbdo zza;
+    final /* synthetic */ zzbcf zzb;
+    final /* synthetic */ zzbgy zzc;
+
+    public zzbgw(zzbgy zzbgyVar, zzbdo zzbdoVar, zzbcf zzbcfVar) {
+        this.zza = zzbdoVar;
+        this.zzb = zzbcfVar;
+        this.zzc = zzbgyVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.zzc.zza.zza(this.zza, this.zzb);
+    }
+}

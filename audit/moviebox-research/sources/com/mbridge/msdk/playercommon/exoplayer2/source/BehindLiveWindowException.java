@@ -1,0 +1,8 @@
+package com.mbridge.msdk.playercommon.exoplayer2.source;
+
+import java.io.IOException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public final class BehindLiveWindowException extends IOException {
+}

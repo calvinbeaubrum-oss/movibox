@@ -1,0 +1,16 @@
+package com.google.android.exoplayer2.upstream.cache;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes4.dex */
+public interface g {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    public static final g f35321a = new g() { // from class: com.google.android.exoplayer2.upstream.cache.e
+        @Override // com.google.android.exoplayer2.upstream.cache.g
+        public final String a(com.google.android.exoplayer2.upstream.n nVar) {
+            return f.a(nVar);
+        }
+    };
+
+    String a(com.google.android.exoplayer2.upstream.n nVar);
+}

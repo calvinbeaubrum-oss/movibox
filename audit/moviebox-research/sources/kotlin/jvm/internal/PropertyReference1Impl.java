@@ -1,0 +1,28 @@
+package kotlin.jvm.internal;
+
+import kotlin.SinceKotlin;
+import kotlin.reflect.KClass;
+import kotlin.reflect.KDeclarationContainer;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+public class PropertyReference1Impl extends PropertyReference1 {
+    @SinceKotlin
+    public PropertyReference1Impl(Class cls, String str, String str2, int i11) {
+        super(CallableReference.NO_RECEIVER, cls, str, str2, i11);
+    }
+
+    @SinceKotlin
+    public PropertyReference1Impl(Object obj, Class cls, String str, String str2, int i11) {
+        super(obj, cls, str, str2, i11);
+    }
+
+    public PropertyReference1Impl(KDeclarationContainer kDeclarationContainer, String str, String str2) {
+        super(CallableReference.NO_RECEIVER, ((ClassBasedDeclarationContainer) kDeclarationContainer).c(), str, str2, !(kDeclarationContainer instanceof KClass) ? 1 : 0);
+    }
+
+    @Override // kotlin.jvm.internal.PropertyReference1
+    public Object get(Object obj) {
+        return getGetter().call(obj);
+    }
+}

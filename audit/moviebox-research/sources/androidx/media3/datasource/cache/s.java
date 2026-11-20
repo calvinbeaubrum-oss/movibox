@@ -1,0 +1,96 @@
+package androidx.media3.datasource.cache;
+
+import androidx.annotation.Nullable;
+import com.amazonaws.services.s3.model.InstructionFileId;
+import com.mbridge.msdk.playercommon.exoplayer2.C;
+import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import z3.u0;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes2.dex */
+public final class s extends h {
+
+    /* JADX INFO: renamed from: h, reason: collision with root package name */
+    public static final Pattern f9732h = Pattern.compile("^(.+)\\.(\\d+)\\.(\\d+)\\.v1\\.exo$", 32);
+
+    /* JADX INFO: renamed from: i, reason: collision with root package name */
+    public static final Pattern f9733i = Pattern.compile("^(.+)\\.(\\d+)\\.(\\d+)\\.v2\\.exo$", 32);
+
+    /* JADX INFO: renamed from: j, reason: collision with root package name */
+    public static final Pattern f9734j = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)\\.v3\\.exo$", 32);
+
+    public s(String str, long j11, long j12, long j13, @Nullable File file) {
+        super(str, j11, j12, j13, file);
+    }
+
+    @Nullable
+    public static s e(File file, long j11, long j12, k kVar) {
+        File file2;
+        String strK;
+        String name = file.getName();
+        if (name.endsWith(".v3.exo")) {
+            file2 = file;
+        } else {
+            File fileL = l(file, kVar);
+            if (fileL == null) {
+                return null;
+            }
+            file2 = fileL;
+            name = fileL.getName();
+        }
+        Matcher matcher = f9734j.matcher(name);
+        if (!matcher.matches() || (strK = kVar.k(Integer.parseInt((String) z3.a.e(matcher.group(1))))) == null) {
+            return null;
+        }
+        long length = j11 == -1 ? file2.length() : j11;
+        if (length == 0) {
+            return null;
+        }
+        return new s(strK, Long.parseLong((String) z3.a.e(matcher.group(2))), length, j12 == C.TIME_UNSET ? Long.parseLong((String) z3.a.e(matcher.group(3))) : j12, file2);
+    }
+
+    @Nullable
+    public static s h(File file, long j11, k kVar) {
+        return e(file, j11, C.TIME_UNSET, kVar);
+    }
+
+    public static s i(String str, long j11, long j12) {
+        return new s(str, j11, j12, C.TIME_UNSET, null);
+    }
+
+    public static s j(String str, long j11) {
+        return new s(str, j11, -1L, C.TIME_UNSET, null);
+    }
+
+    public static File k(File file, int i11, long j11, long j12) {
+        return new File(file, i11 + InstructionFileId.DOT + j11 + InstructionFileId.DOT + j12 + ".v3.exo");
+    }
+
+    @Nullable
+    public static File l(File file, k kVar) {
+        String strA1;
+        String name = file.getName();
+        Matcher matcher = f9733i.matcher(name);
+        if (matcher.matches()) {
+            strA1 = u0.A1((String) z3.a.e(matcher.group(1)));
+        } else {
+            matcher = f9732h.matcher(name);
+            strA1 = matcher.matches() ? (String) z3.a.e(matcher.group(1)) : null;
+        }
+        if (strA1 == null) {
+            return null;
+        }
+        File fileK = k((File) z3.a.i(file.getParentFile()), kVar.f(strA1), Long.parseLong((String) z3.a.e(matcher.group(2))), Long.parseLong((String) z3.a.e(matcher.group(3))));
+        if (file.renameTo(fileK)) {
+            return fileK;
+        }
+        return null;
+    }
+
+    public s d(File file, long j11) {
+        z3.a.g(this.f9685d);
+        return new s(this.f9682a, this.f9683b, this.f9684c, j11, file);
+    }
+}

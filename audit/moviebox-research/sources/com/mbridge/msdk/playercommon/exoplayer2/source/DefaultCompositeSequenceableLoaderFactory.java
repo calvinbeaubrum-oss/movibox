@@ -1,0 +1,10 @@
+package com.mbridge.msdk.playercommon.exoplayer2.source;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public final class DefaultCompositeSequenceableLoaderFactory implements CompositeSequenceableLoaderFactory {
+    @Override // com.mbridge.msdk.playercommon.exoplayer2.source.CompositeSequenceableLoaderFactory
+    public final SequenceableLoader createCompositeSequenceableLoader(SequenceableLoader... sequenceableLoaderArr) {
+        return new CompositeSequenceableLoader(sequenceableLoaderArr);
+    }
+}

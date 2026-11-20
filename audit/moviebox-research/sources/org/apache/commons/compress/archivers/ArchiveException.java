@@ -1,0 +1,16 @@
+package org.apache.commons.compress.archivers;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes8.dex */
+public class ArchiveException extends Exception {
+    private static final long serialVersionUID = 2772690708123267100L;
+
+    public ArchiveException(String str) {
+        super(str);
+    }
+
+    public ArchiveException(String str, Exception exc) {
+        super(str);
+        initCause(exc);
+    }
+}

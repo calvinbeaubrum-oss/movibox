@@ -1,0 +1,16 @@
+package com.google.android.gms.internal.ads;
+
+import android.content.Context;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzcub implements zzhhd {
+    public static zzctz zza(zzcwg zzcwgVar, Context context, zzcjk zzcjkVar, int i11, zzcto zzctoVar, zzdkw zzdkwVar, zzdhy zzdhyVar, zzdbk zzdbkVar, zzcdp zzcdpVar) {
+        return new zzctz(zzcwgVar, context, zzcjkVar, i11, zzctoVar, zzdkwVar, zzdhyVar, zzdbkVar, zzcdpVar);
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhhu
+    public final /* bridge */ /* synthetic */ Object zzb() {
+        throw null;
+    }
+}

@@ -1,0 +1,93 @@
+package com.google.android.gms.internal.ads;
+
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import androidx.annotation.Nullable;
+import com.google.android.gms.common.internal.safeparcel.AbstractSafeParcelable;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelWriter;
+import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
+import java.util.List;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+@SafeParcelable.Class(creator = "NonagonRequestParcelCreator")
+public final class zzbze extends AbstractSafeParcelable {
+    public static final Parcelable.Creator<zzbze> CREATOR = new zzbzf();
+
+    @SafeParcelable.Field(id = 1)
+    public final Bundle zza;
+
+    @SafeParcelable.Field(id = 2)
+    public final zzcei zzb;
+
+    @SafeParcelable.Field(id = 3)
+    public final ApplicationInfo zzc;
+
+    @SafeParcelable.Field(id = 4)
+    public final String zzd;
+
+    @SafeParcelable.Field(id = 5)
+    public final List zze;
+
+    @Nullable
+    @SafeParcelable.Field(id = 6)
+    public final PackageInfo zzf;
+
+    @SafeParcelable.Field(id = 7)
+    public final String zzg;
+
+    @SafeParcelable.Field(id = 9)
+    public final String zzh;
+
+    @Nullable
+    @SafeParcelable.Field(id = 10)
+    public zzfjc zzi;
+
+    @Nullable
+    @SafeParcelable.Field(id = 11)
+    public String zzj;
+
+    @SafeParcelable.Field(id = 12)
+    public final boolean zzk;
+
+    @SafeParcelable.Field(id = 13)
+    public final boolean zzl;
+
+    @SafeParcelable.Constructor
+    public zzbze(@SafeParcelable.Param(id = 1) Bundle bundle, @SafeParcelable.Param(id = 2) zzcei zzceiVar, @SafeParcelable.Param(id = 3) ApplicationInfo applicationInfo, @SafeParcelable.Param(id = 4) String str, @SafeParcelable.Param(id = 5) List list, @Nullable @SafeParcelable.Param(id = 6) PackageInfo packageInfo, @SafeParcelable.Param(id = 7) String str2, @SafeParcelable.Param(id = 9) String str3, @SafeParcelable.Param(id = 10) zzfjc zzfjcVar, @SafeParcelable.Param(id = 11) String str4, @SafeParcelable.Param(id = 12) boolean z11, @SafeParcelable.Param(id = 13) boolean z12) {
+        this.zza = bundle;
+        this.zzb = zzceiVar;
+        this.zzd = str;
+        this.zzc = applicationInfo;
+        this.zze = list;
+        this.zzf = packageInfo;
+        this.zzg = str2;
+        this.zzh = str3;
+        this.zzi = zzfjcVar;
+        this.zzj = str4;
+        this.zzk = z11;
+        this.zzl = z12;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i11) {
+        Bundle bundle = this.zza;
+        int iBeginObjectHeader = SafeParcelWriter.beginObjectHeader(parcel);
+        SafeParcelWriter.writeBundle(parcel, 1, bundle, false);
+        SafeParcelWriter.writeParcelable(parcel, 2, this.zzb, i11, false);
+        SafeParcelWriter.writeParcelable(parcel, 3, this.zzc, i11, false);
+        SafeParcelWriter.writeString(parcel, 4, this.zzd, false);
+        SafeParcelWriter.writeStringList(parcel, 5, this.zze, false);
+        SafeParcelWriter.writeParcelable(parcel, 6, this.zzf, i11, false);
+        SafeParcelWriter.writeString(parcel, 7, this.zzg, false);
+        SafeParcelWriter.writeString(parcel, 9, this.zzh, false);
+        SafeParcelWriter.writeParcelable(parcel, 10, this.zzi, i11, false);
+        SafeParcelWriter.writeString(parcel, 11, this.zzj, false);
+        SafeParcelWriter.writeBoolean(parcel, 12, this.zzk);
+        SafeParcelWriter.writeBoolean(parcel, 13, this.zzl);
+        SafeParcelWriter.finishObjectHeader(parcel, iBeginObjectHeader);
+    }
+}

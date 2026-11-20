@@ -1,0 +1,43 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzhfd extends zzgzu implements zzhbf {
+    private static final zzhfd zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private long zzg;
+    private long zzh;
+
+    static {
+        zzhfd zzhfdVar = new zzhfd();
+        zzb = zzhfdVar;
+        zzgzu.zzaU(zzhfd.class, zzhfdVar);
+    }
+
+    private zzhfd() {
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzgzu
+    public final Object zzb(int i11, Object obj, Object obj2) {
+        int i12 = i11 - 1;
+        if (i12 == 0) {
+            return (byte) 1;
+        }
+        if (i12 == 2) {
+            return zzgzu.zzaR(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003ဂ\u0002\u0004ဂ\u0003", new Object[]{"zzd", "zze", zzhfc.zza, "zzf", "zzg", "zzh"});
+        }
+        if (i12 == 3) {
+            return new zzhfd();
+        }
+        zzhdp zzhdpVar = null;
+        if (i12 == 4) {
+            return new zzhfb(zzhdpVar);
+        }
+        if (i12 != 5) {
+            return null;
+        }
+        return zzb;
+    }
+}

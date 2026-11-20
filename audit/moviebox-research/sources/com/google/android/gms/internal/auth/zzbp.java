@@ -1,0 +1,18 @@
+package com.google.android.gms.internal.auth;
+
+import com.google.android.gms.auth.api.proxy.ProxyResponse;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzbp extends zzbd {
+    final /* synthetic */ zzbq zza;
+
+    public zzbp(zzbq zzbqVar) {
+        this.zza = zzbqVar;
+    }
+
+    @Override // com.google.android.gms.internal.auth.zzbd, com.google.android.gms.internal.auth.zzbg
+    public final void zzb(ProxyResponse proxyResponse) {
+        this.zza.setResult(new zzbu(proxyResponse));
+    }
+}

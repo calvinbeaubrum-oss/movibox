@@ -1,0 +1,20 @@
+package com.google.android.libraries.places.internal;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public class zzayn {
+    public void zza(zzbdo zzbdoVar, zzbcf zzbcfVar) {
+        throw null;
+    }
+
+    public void zzb(zzbcf zzbcfVar) {
+        throw null;
+    }
+
+    public void zzc(Object obj) {
+        throw null;
+    }
+
+    public void zzd() {
+    }
+}

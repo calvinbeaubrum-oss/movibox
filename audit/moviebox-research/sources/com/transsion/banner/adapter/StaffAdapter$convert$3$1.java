@@ -1,0 +1,182 @@
+package com.transsion.banner.adapter;
+
+import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import androidx.core.view.MotionEventCompat;
+import com.google.android.material.imageview.ShapeableImageView;
+import com.transsion.moviedetailapi.bean.Staff;
+import java.io.InputStream;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+import kotlin.jvm.functions.Function3;
+import kotlinx.coroutines.k0;
+import kotlinx.coroutines.w0;
+
+/*  JADX ERROR: Error in decompile pass: KotlinMetadataDecompile
+    java.lang.IllegalArgumentException: Provided Metadata instance does not have metadataVersion in it and therefore is malformed and cannot be read.
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.checkMetadataVersionForRead(JvmReadUtils.kt:79)
+    	at kotlin.metadata.jvm.internal.JvmReadUtils.readMetadataImpl$kotlin_metadata_jvm(JvmReadUtils.kt:46)
+    	at kotlin.metadata.jvm.KotlinClassMetadata$Companion.readLenient(KotlinClassMetadata.kt:418)
+    	at jadx.plugins.kotlin.metadata.utils.KotlinMetadataExtKt.getKotlinClassMetadata(KotlinMetadataExt.kt:68)
+    	at jadx.plugins.kotlin.metadata.utils.KmClassWrapper$Companion.getWrapper(KmClassWrapper.kt:31)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:33)
+    	at jadx.plugins.kotlin.metadata.pass.KotlinMetadataDecompilePass.visit(KotlinMetadataDecompilePass.kt:31)
+    */
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+@Metadata
+@DebugMetadata(c = "com.transsion.banner.adapter.StaffAdapter$convert$3$1", f = "StaffAdapter.kt", l = {50}, m = "invokeSuspend")
+public final class StaffAdapter$convert$3$1 extends SuspendLambda implements Function2<k0, Continuation<? super Unit>, Object> {
+    final /* synthetic */ Staff $item;
+    final /* synthetic */ ShapeableImageView $this_apply;
+    int label;
+
+    /* JADX INFO: renamed from: com.transsion.banner.adapter.StaffAdapter$convert$3$1$1, reason: invalid class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    @DebugMetadata(c = "com.transsion.banner.adapter.StaffAdapter$convert$3$1$1", f = "StaffAdapter.kt", l = {MotionEventCompat.AXIS_GENERIC_16}, m = "invokeSuspend")
+    public static final class AnonymousClass1 extends SuspendLambda implements Function2<kotlinx.coroutines.flow.b<? super Bitmap>, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Staff $item;
+        final /* synthetic */ ShapeableImageView $this_apply;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public AnonymousClass1(Staff staff, ShapeableImageView shapeableImageView, Continuation<? super AnonymousClass1> continuation) {
+            super(2, continuation);
+            this.$item = staff;
+            this.$this_apply = shapeableImageView;
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            AnonymousClass1 anonymousClass1 = new AnonymousClass1(this.$item, this.$this_apply, continuation);
+            anonymousClass1.L$0 = obj;
+            return anonymousClass1;
+        }
+
+        @Override // kotlin.jvm.functions.Function2
+        public final Object invoke(kotlinx.coroutines.flow.b<? super Bitmap> bVar, Continuation<? super Unit> continuation) {
+            return ((AnonymousClass1) create(bVar, continuation)).invokeSuspend(Unit.f68710a);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) throws Throwable {
+            AssetManager assets;
+            Object objE = kotlin.coroutines.intrinsics.a.e();
+            int i11 = this.label;
+            if (i11 == 0) {
+                ResultKt.b(obj);
+                kotlinx.coroutines.flow.b bVar = (kotlinx.coroutines.flow.b) this.L$0;
+                String avatarUrl = this.$item.getAvatarUrl();
+                if (avatarUrl != null) {
+                    Context context = this.$this_apply.getContext();
+                    InputStream inputStreamOpen = (context == null || (assets = context.getAssets()) == null) ? null : assets.open(avatarUrl);
+                    Bitmap bitmapDecodeStream = BitmapFactory.decodeStream(inputStreamOpen);
+                    this.L$0 = inputStreamOpen;
+                    this.label = 1;
+                    if (bVar.emit(bitmapDecodeStream, this) == objE) {
+                        return objE;
+                    }
+                }
+            } else {
+                if (i11 != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+                ResultKt.b(obj);
+            }
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX INFO: renamed from: com.transsion.banner.adapter.StaffAdapter$convert$3$1$2, reason: invalid class name */
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    @DebugMetadata(c = "com.transsion.banner.adapter.StaffAdapter$convert$3$1$2", f = "StaffAdapter.kt", l = {}, m = "invokeSuspend")
+    public static final class AnonymousClass2 extends SuspendLambda implements Function3<kotlinx.coroutines.flow.b<? super Bitmap>, Throwable, Continuation<? super Unit>, Object> {
+        int label;
+
+        public AnonymousClass2(Continuation<? super AnonymousClass2> continuation) {
+            super(3, continuation);
+        }
+
+        @Override // kotlin.jvm.functions.Function3
+        public final Object invoke(kotlinx.coroutines.flow.b<? super Bitmap> bVar, Throwable th2, Continuation<? super Unit> continuation) {
+            return new AnonymousClass2(continuation).invokeSuspend(Unit.f68710a);
+        }
+
+        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+        public final Object invokeSuspend(Object obj) throws Throwable {
+            kotlin.coroutines.intrinsics.a.e();
+            if (this.label != 0) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.b(obj);
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX INFO: compiled from: source.java */
+    @Metadata
+    public static final class a<T> implements kotlinx.coroutines.flow.b {
+
+        /* JADX INFO: renamed from: a, reason: collision with root package name */
+        public final /* synthetic */ ShapeableImageView f50944a;
+
+        public a(ShapeableImageView shapeableImageView) {
+            this.f50944a = shapeableImageView;
+        }
+
+        @Override // kotlinx.coroutines.flow.b
+        /* JADX INFO: renamed from: a, reason: merged with bridge method [inline-methods] */
+        public final Object emit(Bitmap bitmap, Continuation<? super Unit> continuation) {
+            this.f50944a.setImageBitmap(bitmap);
+            return Unit.f68710a;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public StaffAdapter$convert$3$1(Staff staff, ShapeableImageView shapeableImageView, Continuation<? super StaffAdapter$convert$3$1> continuation) {
+        super(2, continuation);
+        this.$item = staff;
+        this.$this_apply = shapeableImageView;
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        return new StaffAdapter$convert$3$1(this.$item, this.$this_apply, continuation);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(k0 k0Var, Continuation<? super Unit> continuation) {
+        return ((StaffAdapter$convert$3$1) create(k0Var, continuation)).invokeSuspend(Unit.f68710a);
+    }
+
+    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
+    public final Object invokeSuspend(Object obj) throws Throwable {
+        Object objE = kotlin.coroutines.intrinsics.a.e();
+        int i11 = this.label;
+        if (i11 == 0) {
+            ResultKt.b(obj);
+            kotlinx.coroutines.flow.a aVarE = kotlinx.coroutines.flow.c.e(kotlinx.coroutines.flow.c.q(kotlinx.coroutines.flow.c.o(new AnonymousClass1(this.$item, this.$this_apply, null)), w0.b()), new AnonymousClass2(null));
+            a aVar = new a(this.$this_apply);
+            this.label = 1;
+            if (aVarE.a(aVar, this) == objE) {
+                return objE;
+            }
+        } else {
+            if (i11 != 1) {
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+            ResultKt.b(obj);
+        }
+        return Unit.f68710a;
+    }
+}

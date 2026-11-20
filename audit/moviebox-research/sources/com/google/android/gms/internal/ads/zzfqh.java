@@ -1,0 +1,15 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzfqh extends zzfqf {
+    public zzfqh(zzfpx zzfpxVar) {
+        super(zzfpxVar);
+    }
+
+    @Override // android.os.AsyncTask
+    public final /* bridge */ /* synthetic */ Object doInBackground(Object[] objArr) {
+        this.zzd.zze(null);
+        return null;
+    }
+}

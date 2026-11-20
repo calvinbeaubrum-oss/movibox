@@ -1,0 +1,15 @@
+package com.squareup.okhttp.internal.framed;
+
+import com.squareup.okhttp.Protocol;
+import okio.BufferedSink;
+import okio.BufferedSource;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public interface Variant {
+    Protocol getProtocol();
+
+    FrameReader newReader(BufferedSource bufferedSource, boolean z11);
+
+    FrameWriter newWriter(BufferedSink bufferedSink, boolean z11);
+}

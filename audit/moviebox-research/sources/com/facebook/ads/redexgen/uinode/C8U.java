@@ -1,0 +1,38 @@
+package com.facebook.ads.redexgen.uinode;
+
+import com.applovin.exoplayer2.common.base.Ascii;
+import java.util.Arrays;
+
+/* JADX INFO: renamed from: com.facebook.ads.redexgen.X.8U, reason: invalid class name */
+/* JADX INFO: loaded from: assets/audience_network.dex */
+public enum C8U {
+    A05,
+    A04,
+    A03;
+
+    public static byte[] A00;
+    public static String[] A01 = {"PRV2czZbjjW7Ot8uaJuxnRGNdIXO90ph", "gwx3lgvxFr5Ur4U2", "dsOpW9WfLYJghusiq4Ru5jQxxgYMnVUV", "Pl2vgN3HXqbbKxjZzIk4bg0eix12xhJu", "GcMaFESaYtqWHDueobHkP3OuSFimx", "24r37uIww3uTwRKO2qndV6iCHFSPOn3z", "z2MMJP2kfG1jeTB65BQHm0", "ohb3NNZFp"};
+
+    static {
+        A01();
+    }
+
+    public static String A00(int i11, int i12, int i13) {
+        byte[] bArrCopyOfRange = Arrays.copyOfRange(A00, i11, i11 + i12);
+        for (int i14 = 0; i14 < bArrCopyOfRange.length; i14++) {
+            int i15 = bArrCopyOfRange[i14] - i13;
+            if (A01[3].charAt(9) != 'q') {
+                throw new RuntimeException();
+            }
+            String[] strArr = A01;
+            strArr[2] = "qn8tosrMnBeOYh3nA69X7hpHPvfrKSD7";
+            strArr[0] = "8KW7HxISbWo03NIKRfZKM6CMMG4fzKY9";
+            bArrCopyOfRange[i14] = (byte) (i15 - 96);
+        }
+        return new String(bArrCopyOfRange);
+    }
+
+    public static void A01() {
+        A00 = new byte[]{Ascii.DC2, Ascii.ESC, Ascii.CAN, Ascii.DC2, Ascii.SUB, -57, -53, -50, -48, -61, -47, -47, -57, -51, -52, -70, -83, -71, -67, -83, -69, -68};
+    }
+}

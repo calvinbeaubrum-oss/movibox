@@ -1,0 +1,16 @@
+package com.google.firebase.crashlytics.buildtools.reloc.org.apache.http;
+
+import java.io.IOException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes6.dex */
+public class MalformedChunkCodingException extends IOException {
+    private static final long serialVersionUID = 2158560246948994524L;
+
+    public MalformedChunkCodingException() {
+    }
+
+    public MalformedChunkCodingException(String str) {
+        super(str);
+    }
+}

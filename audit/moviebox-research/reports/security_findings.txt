@@ -1,0 +1,308 @@
+SCAN SÉCURITÉ — MovieBox v3.0.05.0711.03 (com.community.oneroom) — APK NON PACKÉE
+Généré le 2026-11-15T04:43:29.036Z
+Sources : jadx_output/sources + resources (fichiers texte scannés : 43467, ignorés : 2039)
+Valeurs REDACTÉES : seuls les 4 premiers caractères sont montrés.
+
+== 1. CLÉS / SECRETS (30 distincts) ==
+  [Secret gateway base64 (76iR/Xqn2 + suite)] x4  sources/com/cloud/hisavana/sdk/h0.java
+    76iR…[REDACTÉ] (longueur 40)
+  [Secret gateway base64 (76iR/Xqn2 + suite)] x3  sources/com/cloud/hisavana/sdk/h0.java
+    Xqn2…[REDACTÉ] (longueur 40)
+  [Clé Google (AIza)] x3  sources/com/google/android/gms/internal/ads/zzbii.java
+    AIza…[REDACTÉ] (longueur 39)
+  [password/secret/token] x3  sources/com/google/android/libraries/places/internal/zzbkf.java
+    .con…[REDACTÉ] (longueur 47)
+  [password/secret/token] x3  sources/com/mbridge/msdk/thrid/okhttp/MediaType.java
+    ([a-…[REDACTÉ] (longueur 17)
+  [api_key/apikey] x2  sources/com/community/oneroom/R.java
+    0x7f…[REDACTÉ] (longueur 11)
+  [password/secret/token] x2  sources/com/google/android/gms/ads/internal/util/zzbw.java
+    .con…[REDACTÉ] (longueur 40)
+  [api_key/apikey] x2  sources/com/google/android/gms/common/api/AvailabilityException.java
+    goog…[REDACTÉ] (longueur 22)
+  [api_key/apikey] x2  sources/com/google/android/gms/common/api/AvailabilityException.java
+    this…[REDACTÉ] (longueur 18)
+  [api_key/apikey] x2  sources/com/google/android/gms/common/api/internal/zabq.java
+    this…[REDACTÉ] (longueur 9)
+  [hex 64 (signature/empreinte)] x2  sources/com/google/android/gms/internal/ads/zzawh.java
+    0000…[REDACTÉ] (longueur 64)
+  [api_key/apikey] x2  sources/com/transsion/subroom/R$string.java
+    2131…[REDACTÉ] (longueur 11)
+  [password/secret/token] x1  sources/android/support/v4/media/session/MediaSessionCompat.java
+    andr…[REDACTÉ] (longueur 47)
+  [password/secret/token] x1  sources/android/support/v4/media/session/MediaSessionCompat.java
+    andr…[REDACTÉ] (longueur 38)
+  [password/secret/token] x1  sources/com/alibaba/sdk/android/oss/common/OSSHeaders.java
+    x-os…[REDACTÉ] (longueur 20)
+  [password/secret/token] x1  sources/com/alibaba/sdk/android/oss/common/RequestParameters.java
+    secu…[REDACTÉ] (longueur 14)
+  [password/secret/token] x1  sources/com/android/billingclient/api/i.java
+    .con…[REDACTÉ] (longueur 33)
+  [password/secret/token] x1  sources/com/google/android/gms/auth/api/identity/SaveAccountLinkingTokenRequest.java
+    extr…[REDACTÉ] (longueur 11)
+  [api_key/apikey] x1  sources/com/google/android/gms/common/api/AvailabilityException.java
+    hasA…[REDACTÉ] (longueur 22)
+  [api_key/apikey] x1  sources/com/google/android/gms/common/api/GoogleApi.java
+    ApiK…[REDACTÉ] (longueur 27)
+  [api_key/apikey] x1  sources/com/google/android/gms/common/api/internal/ApiKey.java
+    (Api…[REDACTÉ] (longueur 8)
+  [password/secret/token] x1  sources/com/google/android/gms/common/data/DataBufferUtils.java
+    next…[REDACTÉ] (longueur 15)
+  [password/secret/token] x1  sources/com/google/android/gms/common/data/DataBufferUtils.java
+    prev…[REDACTÉ] (longueur 15)
+  [password/secret/token] x1  sources/com/google/android/gms/common/internal/ServiceSpecificExtraArgs.java
+    com.…[REDACTÉ] (longueur 49)
+  [password/secret/token] x1  sources/com/google/android/gms/gcm/GcmPubSub.java
+    .con…[REDACTÉ] (longueur 19)
+  [password/secret/token] x1  sources/com/hisavana/common/tracking/TrackingKey.java
+    scen…[REDACTÉ] (longueur 11)
+  [password/secret/token] x1  sources/com/transsion/push/PushConstants.java
+    extr…[REDACTÉ] (longueur 15)
+  [password/secret/token] x1  sources/com/transsion/push/PushConstants.java
+    push…[REDACTÉ] (longueur 10)
+  [gateway_secret meta-data] x1  resources/AndroidManifest.xml
+    Xqn2…[REDACTÉ] (longueur 40)
+  [gateway_secret meta-data] x1  resources/AndroidManifest.xml
+    76iR…[REDACTÉ] (longueur 40)
+
+== 2. HÔTES / ENDPOINTS (612 distincts, triés par fréquence) ==
+   4876x  schemas.android.com
+        ex: http://schemas.android.com/apk/res/android  (b3/k.java)
+    233x  github.com
+        ex: https://github.com/danikula/AndroidVideoCache/issues/88.  (videocache/h.java)
+    169x  www.apache.org
+        ex: http://www.apache.org/licenses/LICENSE-2.0  (resources/client_analytics.proto)
+    154x  en.wikipedia.org
+        ex: http://en.wikipedia.org/wiki/Main_Page  (META-INF/README.md)
+     31x  pacdn.aoneroom.com
+        ex: https://pacdn.aoneroom.com/image/2024/11/01/209d0b40e1b24b81a4fbd9ea150165ec.jpeg  (push/PushTestActivity.java)
+     20x  h5.dlight-app.com
+        ex: https://h5.dlight-app.com/outside/privacy-policy?lang=  (bridge/PermissionScopeBridge.java)
+     19x  play.google.com
+        ex: https://play.google.com/store/apps/details?id=  (impl/km.java)
+     18x  www.w3.org
+        ex: http://www.w3.org/ns/ttml#parameter  (ci/c.java)
+     15x  100000.miniapp.transsion.com
+        ex: https://100000.miniapp.transsion.com/master.js  (internalBridge/RegisterWorkerBridge.java)
+     13x  www.googleapis.com
+        ex: https://www.googleapis.com/auth/games.firstparty  (common/FirstPartyScopes.java)
+     13x  developers.google.com
+        ex: https://developers.google.com/admob/android/test-ads#enable_test_devices  (ads/zzdzd.java)
+     13x  jsoup.org
+        ex: https://jsoup.org/cookbook/input/parse-document-from-string  (META-INF/README.md)
+     12x  app-oss.byte-app.com
+        ex: http://app-oss.byte-app.com/common/js/bgm_fix_min.js  (defaultImpl/InjectJSProxyImp.java)
+     11x  developers.applovin.com
+        ex: https://developers.applovin.com/en/android/overview/integration  (impl/me.java)
+     10x  googleads.g.doubleclick.net
+        ex: https://googleads.g.doubleclick.net/mads/static/mad/sdk/native/production/sdk-core-v40-imp…  (ads/zzbgc.java)
+     10x  whatwg.org
+        ex: http://whatwg.org/html/common-microsyntaxes.html#space-character  (b/b.java)
+     10x  test-acdn.aoneroom.com
+        ex: https://test-acdn.aoneroom.com/media/video/2022/08/11/5970c1ffed2920c3b2d80da029fe3944-sd.…  (test/TestActivity.java)
+     10x  t.me
+        ex: https://t.me/moviebox_request  (values/strings.xml)
+      9x  developer.android.com
+        ex: https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted  (datasource/HttpDataSource.java)
+      9x  firebase.google.com
+        ex: https://firebase.google.com/support/guides/disable-analytics  (internal/zzdy.java)
+      9x  cdn2.palmplaystore.com
+        ex: https://cdn2.palmplaystore.com/static/59/42d6df6edbe84bdd926fab309aa48261-V02222_512~512.w…  (strategy/a.java)
+      8x  dashif.org
+        ex: http://dashif.org/guidelines/trickmode  (dash/b.java)
+      7x  googlemobileadssdk.page.link
+        ex: https://googlemobileadssdk.page.link/admob-android-update-manifest  (client/zzek.java)
+      7x  www.google.com
+        ex: https://www.google.com/dfp/linkDevice  (ads/zzbgc.java)
+      7x  h5-static.aoneroom.com
+        ex: https://h5-static.aoneroom.com/spa/html/moviebox-privacy-policy.html  (setting/SettingAboutUsActivity.java)
+      6x  x
+        ex: https://x  (drm/h.java)
+      6x  sf16-static.i18n-pglstatp.com
+        ex: https://sf16-static.i18n-pglstatp.com/obj/ad-pattern-sg/static/images/  (ExN/sc.java)
+      6x  www.
+        ex: https://www.  (adapter/r.java)
+      6x  www.afnic.fr
+        ex: http://www.afnic.fr/  (mozilla/public-suffix-list.txt)
+      5x  aomedia.org
+        ex: https://aomedia.org/emsg/ID3  (emsg/EventMessage.java)
+      5x  developer.apple.com
+        ex: https://developer.apple.com/streaming/emsg-id3  (emsg/EventMessage.java)
+      5x  ns.adobe.com
+        ex: http://ns.adobe.com/xap/1.0/  (b5/b.java)
+      5x  www.example.com
+        ex: http://www.example.com  (act/sc.java)
+      5x  xml.apache.org
+        ex: http://xml.apache.org/xslt  (utils/LogUtils.java)
+      5x  aws.amazon.com
+        ex: https://aws.amazon.com/cloudfront/  (mozilla/public-suffix-list.txt)
+      4x  schemas.microsoft.com
+        ex: http://schemas.microsoft.com/DRM/2007/03/protocols/AcquireLicense  (drm/i.java)
+      4x  %s
+        ex: https://%s  (utils/cJ.java)
+      4x  www.facebook.com
+        ex: https://www.facebook.com/adnw_logging/  (dynamicloading/DexLoadErrorReporter.java)
+      4x  vip-api.opensubtitles.com
+        ex: https://vip-api.opensubtitles.com/api/v1/download  (helper/b.java)
+      4x  h5.aoneroom.com
+        ex: https://h5.aoneroom.com/download?type=/transfer/wifi_connect&  (qrcode/QrCodeUtil.java)
+      4x  commons.apache.org
+        ex: http://commons.apache.org/proper/commons-codec/  (META-INF/DEPENDENCIES)
+      4x  www.gobin.info
+        ex: http://www.gobin.info/domainname/bw.doc  (mozilla/public-suffix-list.txt)
+      4x  www.norid.no
+        ex: http://www.norid.no/regelverk/index.en.html  (mozilla/public-suffix-list.txt)
+      3x  api-fat0101.eagllwin.com
+        ex: https://api-fat0101.eagllwin.com  (aa/a.java)
+      3x  api.test.hisavana.com
+        ex: https://api.test.hisavana.com  (aa/a.java)
+      3x  api.fat1.hisavana.com
+        ex: https://api.fat1.hisavana.com  (aa/a.java)
+      3x  api.eagllwin.com
+        ex: https://api.eagllwin.com  (aa/a.java)
+      3x  issuetracker.google.com
+        ex: https://issuetracker.google.com/issues/297974033  (layout/y.java)
+      3x  acs.amazonaws.com
+        ex: http://acs.amazonaws.com/groups/global/AllUsers  (model/GroupGrantee.java)
+      3x  exoplayer.dev
+        ex: https://exoplayer.dev/issues/player-accessed-on-wrong-thread  (impl/ck.java)
+      3x  ms.applovin.com
+        ex: https://ms.applovin.com/1.0/sdk/error  (impl/ma.java)
+      3x  support.google.com
+        ex: https://support.google.com/admob/answer/13554116  (impl/pn.java)
+      3x  assets.applovin.com
+        ex: https://assets.applovin.com/sound_off.png  (ad/b.java)
+      3x  dash.applovin.com
+        ex: https://dash.applovin.com/o/account?r=2#app_ads_txt  (impl/te.java)
+      3x  app-manage-api-test.shalltry.com
+        ex: https://app-manage-api-test.shalltry.com/common/app-management/v1/consumer-not-login/versi…  (tupdate/TUpdate.java)
+      3x  app-manage-api.shalltry.com
+        ex: https://app-manage-api.shalltry.com/common/app-management/v1/consumer-not-login/versioncon…  (tupdate/TUpdate.java)
+      3x  goo.gl
+        ex: https://goo.gl/J1sWQy  (measurement/zzef.java)
+      3x  app-measurement.com
+        ex: https://app-measurement.com/a  (measurement/zznp.java)
+      3x  cashier-serverweb.paynicorn.com
+        ex: https://cashier-serverweb.paynicorn.com/result  (fragment/TranPayWebFragment.java)
+      3x  api.paynicorn.com
+        ex: https://api.paynicorn.com  (network/RetrofitClient.java)
+      3x  test-feature-api.palmplaystore.com
+        ex: https://test-feature-api.palmplaystore.com  (ps/PSAdPlanRequestManager$getPsLinkListBySlot$2.java)
+      3x  feature-api.palmplaystore.com
+        ex: https://feature-api.palmplaystore.com  (ps/PSAdPlanRequestManager$getPsLinkListBySlot$2.java)
+      3x  creativecommons.org
+        ex: http://creativecommons.org/licenses/by/2.5  (concurrent/GuardedBy.java)
+      3x  www.jcip.net
+        ex: http://www.jcip.net  (concurrent/GuardedBy.java)
+      3x  mozilla.org
+        ex: https://mozilla.org/MPL/2.0/.  (mozilla/public-suffix-list.txt)
+      3x  publicsuffix.org
+        ex: https://publicsuffix.org/list/public_suffix_list.dat  (mozilla/public-suffix-list.txt)
+      3x  www.hkirc.hk
+        ex: https://www.hkirc.hk  (mozilla/public-suffix-list.txt)
+      3x  www.dns.pl
+        ex: http://www.dns.pl/english/index.html  (mozilla/public-suffix-list.txt)
+      2x  cc-api.hisavana.com
+        ex: https://cc-api.hisavana.com  (aa/a.java)
+      2x  easymock.tmctool.com
+        ex: https://easymock.tmctool.com/mockurl/66f0d16c89ca3154e5a973ea  (aa/a.java)
+      2x  goo.gle
+        ex: https://goo.gle/compose-feedback  (runtime/k.java)
+      2x  g.co
+        ex: http://g.co/dev/packagevisibility.  (datasource/RawResourceDataSource.java)
+      2x  oss-cn-****.aliyuncs.com',or
+        ex: http://oss-cn-****.aliyuncs.com',or  (internal/InternalRequestOperation.java)
+      2x  image.cnamedomain.com'!
+        ex: http://image.cnamedomain.com'!  (internal/InternalRequestOperation.java)
+      2x  rt.applvn.com
+        ex: https://rt.applvn.com/4.0/pix,https://ms.applovin.com/,https://ms.applvn.com/  (impl/sj.java)
+      2x  ms.applvn.com
+        ex: https://ms.applvn.com/  (impl/sj.java)
+      2x  monetization-support.applovin.com
+        ex: https://monetization-support.applovin.com/hc/en-us/articles/236114328-How-can-I-expose-ver…  (impl/sm.java)
+      2x  api16-access-sg.pangle.io
+        ex: https://api16-access-sg.pangle.io/api/ad/union/sdk/get_ads/?aid=1371&device_platform=andro…  (Ol/zY.java)
+      2x  sf19-static.i18n-pglstatp.com
+        ex: https://sf19-static.i18n-pglstatp.com/obj/ad-pattern-sg/3p_monitor.9db44671.js  (settings/qr.java)
+      2x  cloud-config-oss.shalltry.com
+        ex: https://cloud-config-oss.shalltry.com/cloudconfig/config/  (utils/Constants.java)
+      2x  cloud-config-api-test.shalltry.com
+        ex: http://cloud-config-api-test.shalltry.com/front/cloudconfig/consumer-not-login/cloudconfig…  (utils/Constants.java)
+      2x  cloud-config-api.shalltry.com
+        ex: https://cloud-config-api.shalltry.com/front/cloudconfig/consumer-not-login/cloudconfig/que…  (utils/Constants.java)
+      2x  www.palmplaystore.com
+        ex: http://www.palmplaystore.com/  (utils/d.java)
+      2x  pagead2.googlesyndication.com
+        ex: https://pagead2.googlesyndication.com/pagead/gen_204?id=gmob-apps  (identifier/zza.java)
+      2x  accounts.google.com
+        ex: https://accounts.google.com  (credentials/IdentityProviders.java)
+      2x  maps.googleapis.com
+        ex: https://maps.googleapis.com/  (internal/zziw.java)
+      2x  gist.github.com
+        ex: https://gist.github.com/atk/1020396  (b/b.java)
+      2x  ssdk-va.pangle.io
+        ex: https://ssdk-va.pangle.io/ssdk/v2/r  (ssdk/l0.java)
+      2x  ssdk-sg.pangle.io
+        ex: https://ssdk-sg.pangle.io/ssdk/v2/r  (ssdk/l0.java)
+      2x  test-mse-api.aoneroom.com
+        ex: https://test-mse-api.aoneroom.com  (or/CacheIpPool.java)
+      2x  cashier-serverweb-test.paynicorn.com
+        ex: https://cashier-serverweb-test.paynicorn.com/result  (fragment/TranPayWebFragment.java)
+      2x  test.paynicorn.com
+        ex: https://test.paynicorn.com/  (network/RetrofitClient.java)
+      2x  api.ahagamecenter.com
+        ex: https://api.ahagamecenter.com/bff/game.moviebox  (aha/d.java)
+      2x  devtest-api.twibida.com
+        ex: https://devtest-api.twibida.com/tcm/v1/instance/  (push/PushConstants.java)
+      2x  api.twibida.com
+        ex: https://api.twibida.com/tcm/v1/instance/  (push/PushConstants.java)
+      2x  test-api.twibida.com
+        ex: https://test-api.twibida.com/tcm/v1/instance/  (push/PushConstants.java)
+      2x  api.byte-app.com
+        ex: https://api.byte-app.com/  (resources/AndroidManifest.xml)
+      2x  www.ietf.org
+        ex: https://www.ietf.org/rfc/rfc3339.txt  (protobuf/timestamp.proto)
+      2x  developer.mozilla.org
+        ex: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toIS…  (protobuf/timestamp.proto)
+      2x  www.gnu.org
+        ex: http://www.gnu.org/licenses/  (resources/LICENSES.txt)
+      2x  hc.apache.org
+        ex: http://hc.apache.org/httpcomponents-core-ga  (META-INF/DEPENDENCIES)
+      2x  www.channelisles.net
+        ex: http://www.channelisles.net/register-domains/  (mozilla/public-suffix-list.txt)
+      2x  psg.com
+        ex: http://psg.com/dns/gn/gn.txt  (mozilla/public-suffix-list.txt)
+      2x  www.nic.ir
+        ex: http://www.nic.ir/Terms_and_Conditions_ir,_Appendix_1_Domain_Rules  (mozilla/public-suffix-list.txt)
+      2x  www.rnids.rs
+        ex: https://www.rnids.rs/en/domains/national-domains  (mozilla/public-suffix-list.txt)
+      2x  www.nic.net.sa
+        ex: http://www.nic.net.sa/  (mozilla/public-suffix-list.txt)
+      2x  www.nic.tr
+        ex: https://www.nic.tr/forms/eng/policies.pdf  (mozilla/public-suffix-list.txt)
+      2x  hostmaster.ua
+        ex: https://hostmaster.ua/policy/?ua  (mozilla/public-suffix-list.txt)
+      2x  www.nic.vi
+        ex: http://www.nic.vi/newdomainform.htm  (mozilla/public-suffix-list.txt)
+      2x  cnnic.cn
+        ex: http://cnnic.cn/html/Dir/2005/10/11/3218.htm  (mozilla/public-suffix-list.txt)
+      2x  nic.lk
+        ex: http://nic.lk  (mozilla/public-suffix-list.txt)
+      2x  www.twnic.net
+        ex: http://www.twnic.net/english/dn/dn_07a.htm  (mozilla/public-suffix-list.txt)
+      2x  www.gov.uk
+        ex: https://www.gov.uk/service-manual/operations/operating-servicegovuk-subdomains  (mozilla/public-suffix-list.txt)
+      2x  www.metacentrum.cz
+        ex: https://www.metacentrum.cz/en/  (mozilla/public-suffix-list.txt)
+      1x  minproject.test.sunnbird.com
+        ex: https://minproject.test.sunnbird.com/close-report/index.html  (aa/a.java)
+      1x  minproject.sunnbird.com
+        ex: https://minproject.sunnbird.com/close-report/index.html  (aa/a.java)
+      1x  api.test.eagllwin.com
+        ex: https://api.test.eagllwin.com  (aa/a.java)
+      1x  api.fat1.eagllwin.com
+        ex: https://api.fat1.eagllwin.com  (aa/a.java)
+      1x  api.hisavana.com
+        ex: https://api.hisavana.com  (aa/a.java)
+      1x  default.url
+        ex: https://default.url  (drm/h.java)

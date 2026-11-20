@@ -1,0 +1,78 @@
+package com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base;
+
+import java.util.Collections;
+import java.util.Set;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes6.dex */
+final class Absent<T> extends Optional<T> {
+    static final Absent<Object> INSTANCE = new Absent<>();
+    private static final long serialVersionUID = 0;
+
+    private Absent() {
+    }
+
+    private Object readResolve() {
+        return INSTANCE;
+    }
+
+    public static <T> Optional<T> withType() {
+        return INSTANCE;
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public Set<T> asSet() {
+        return Collections.emptySet();
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public boolean equals(Object obj) {
+        return obj == this;
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public T get() {
+        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public int hashCode() {
+        return 2040732332;
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public boolean isPresent() {
+        return false;
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public Optional<T> or(Optional<? extends T> optional) {
+        return (Optional) l.n(optional);
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public T or(q<? extends T> qVar) {
+        return (T) l.o(qVar.get(), "use Optional.orNull() instead of a Supplier that returns null");
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public T or(T t11) {
+        return (T) l.o(t11, "use Optional.orNull() instead of Optional.or(null)");
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public T orNull() {
+        return null;
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public String toString() {
+        return "Optional.absent()";
+    }
+
+    @Override // com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Optional
+    public <V> Optional<V> transform(d<? super T, V> dVar) {
+        l.n(dVar);
+        return Optional.absent();
+    }
+}

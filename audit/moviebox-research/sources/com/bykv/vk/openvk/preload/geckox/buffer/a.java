@@ -1,0 +1,34 @@
+package com.bykv.vk.openvk.preload.geckox.buffer;
+
+import java.io.File;
+import java.io.IOException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public interface a {
+    int a(byte[] bArr, int i11, int i12) throws IOException;
+
+    long a(long j11) throws IOException;
+
+    void a() throws IOException;
+
+    void a(int i11) throws IOException;
+
+    void a(byte[] bArr) throws IOException;
+
+    int b(byte[] bArr) throws IOException;
+
+    int b(byte[] bArr, int i11, int i12) throws IOException;
+
+    long b() throws IOException;
+
+    void b(long j11) throws IOException;
+
+    long c() throws IOException;
+
+    int d() throws IOException;
+
+    void e();
+
+    File f();
+}

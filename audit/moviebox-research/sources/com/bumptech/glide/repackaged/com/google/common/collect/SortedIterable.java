@@ -1,0 +1,9 @@
+package com.bumptech.glide.repackaged.com.google.common.collect;
+
+import java.util.Comparator;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+interface SortedIterable<T> extends Iterable<T> {
+    Comparator<? super T> comparator();
+}

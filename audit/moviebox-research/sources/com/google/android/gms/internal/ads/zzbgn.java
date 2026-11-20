@@ -1,0 +1,12 @@
+package com.google.android.gms.internal.ads;
+
+import androidx.annotation.Nullable;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+final class zzbgn extends zzbgq {
+    @Override // com.google.android.gms.internal.ads.zzbgq
+    public final String zza(@Nullable String str, String str2) {
+        return str2;
+    }
+}

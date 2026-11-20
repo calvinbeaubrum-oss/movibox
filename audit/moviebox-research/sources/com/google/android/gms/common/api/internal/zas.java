@@ -1,0 +1,16 @@
+package com.google.android.gms.common.api.internal;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+final class zas {
+    final /* synthetic */ BasePendingResult zaa;
+
+    public /* synthetic */ zas(BasePendingResult basePendingResult, zar zarVar) {
+        this.zaa = basePendingResult;
+    }
+
+    public final void finalize() throws Throwable {
+        BasePendingResult.zal(this.zaa.zaj);
+        super.finalize();
+    }
+}

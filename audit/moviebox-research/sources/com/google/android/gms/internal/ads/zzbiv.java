@@ -1,0 +1,19 @@
+package com.google.android.gms.internal.ads;
+
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzbiv extends zzayg {
+    public zzbiv(IBinder iBinder) {
+        super(iBinder, "com.google.android.gms.ads.internal.flags.IFlagRetrieverSupplierProxy");
+    }
+
+    public final void zze(zzbyd zzbydVar) throws RemoteException {
+        Parcel parcelZza = zza();
+        zzayi.zzf(parcelZza, zzbydVar);
+        zzbm(1, parcelZza);
+    }
+}

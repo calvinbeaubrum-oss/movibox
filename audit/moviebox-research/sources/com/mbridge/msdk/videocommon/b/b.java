@@ -1,0 +1,53 @@
+package com.mbridge.msdk.videocommon.b;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public final class b {
+
+    /* JADX INFO: renamed from: a, reason: collision with root package name */
+    private int f48448a;
+
+    /* JADX INFO: renamed from: b, reason: collision with root package name */
+    private int f48449b;
+
+    /* JADX INFO: renamed from: c, reason: collision with root package name */
+    private a f48450c;
+
+    public b(int i11, int i12, a aVar) {
+        this.f48448a = i11;
+        this.f48449b = i12;
+        this.f48450c = aVar;
+    }
+
+    public static List<b> a(JSONArray jSONArray) {
+        if (jSONArray != null && jSONArray.length() > 0) {
+            ArrayList arrayList = new ArrayList();
+            for (int i11 = 0; i11 < jSONArray.length(); i11++) {
+                try {
+                    JSONObject jSONObjectOptJSONObject = jSONArray.optJSONObject(i11);
+                    int iOptInt = jSONObjectOptJSONObject.optInt("id");
+                    int iOptInt2 = jSONObjectOptJSONObject.optInt("timeout");
+                    JSONObject jSONObjectOptJSONObject2 = jSONObjectOptJSONObject.optJSONObject("params");
+                    arrayList.add(new b(iOptInt, iOptInt2, jSONObjectOptJSONObject2 != null ? a.a(jSONObjectOptJSONObject2) : null));
+                } catch (Exception e11) {
+                    e11.printStackTrace();
+                }
+            }
+            return arrayList;
+        }
+        return null;
+    }
+
+    public final int a() {
+        return this.f48448a;
+    }
+
+    public final int b() {
+        return this.f48449b;
+    }
+}

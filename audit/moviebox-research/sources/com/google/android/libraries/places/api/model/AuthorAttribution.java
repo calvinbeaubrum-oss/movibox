@@ -1,0 +1,51 @@
+package com.google.android.libraries.places.api.model;
+
+import android.os.Parcelable;
+import androidx.annotation.Nullable;
+import androidx.annotation.RecentlyNonNull;
+import androidx.annotation.RecentlyNullable;
+import com.google.android.libraries.places.internal.zzmt;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class AuthorAttribution implements Parcelable {
+
+    /* JADX INFO: compiled from: source.java */
+    public static abstract class Builder {
+        @RecentlyNonNull
+        public AuthorAttribution build() {
+            zzmt.zzf(!zzb().getName().isEmpty(), "Name must not be empty.");
+            return zzb();
+        }
+
+        @RecentlyNullable
+        public abstract String getPhotoUri();
+
+        @RecentlyNullable
+        public abstract String getUri();
+
+        @RecentlyNonNull
+        public abstract Builder setPhotoUri(@Nullable String str);
+
+        @RecentlyNonNull
+        public abstract Builder setUri(@Nullable String str);
+
+        public abstract AuthorAttribution zzb();
+    }
+
+    @RecentlyNonNull
+    public static Builder builder(@RecentlyNonNull String str) {
+        zzd zzdVar = new zzd();
+        zzdVar.zza(str);
+        return zzdVar;
+    }
+
+    @RecentlyNonNull
+    public abstract String getName();
+
+    @RecentlyNullable
+    public abstract String getPhotoUri();
+
+    @RecentlyNullable
+    public abstract String getUri();
+}

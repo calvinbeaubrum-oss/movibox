@@ -1,0 +1,17 @@
+package com.facebook.ads.redexgen.uinode;
+
+import java.util.concurrent.atomic.AtomicBoolean;
+
+/* JADX INFO: renamed from: com.facebook.ads.redexgen.X.7c, reason: invalid class name and case insensitive filesystem */
+/* JADX INFO: loaded from: assets/audience_network.dex */
+public final class C11207c {
+    public final AtomicBoolean A00 = new AtomicBoolean(false);
+
+    public final void A00(boolean z11) {
+        this.A00.set(z11);
+    }
+
+    public final boolean A01() {
+        return this.A00.get();
+    }
+}

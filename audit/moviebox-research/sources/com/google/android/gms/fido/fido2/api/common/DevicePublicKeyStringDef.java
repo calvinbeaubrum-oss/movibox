@@ -1,0 +1,17 @@
+package com.google.android.gms.fido.fido2.api.common;
+
+import androidx.annotation.NonNull;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes3.dex */
+public @interface DevicePublicKeyStringDef {
+
+    @NonNull
+    public static final String DIRECT = "direct";
+
+    @NonNull
+    public static final String INDIRECT = "indirect";
+
+    @NonNull
+    public static final String NONE = "none";
+}

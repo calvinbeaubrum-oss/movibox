@@ -1,0 +1,19 @@
+package com.google.android.libraries.places.internal;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzafp extends zzato implements zzavg {
+    private zzafp() {
+        throw null;
+    }
+
+    public /* synthetic */ zzafp(zzadu zzaduVar) {
+        super(zzafq.zzb);
+    }
+
+    public final zzafp zza(zzafe zzafeVar) {
+        zzw();
+        zzafq.zzd((zzafq) this.zza, zzafeVar);
+        return this;
+    }
+}

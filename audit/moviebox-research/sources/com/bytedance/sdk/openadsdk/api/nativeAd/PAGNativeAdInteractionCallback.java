@@ -1,0 +1,17 @@
+package com.bytedance.sdk.openadsdk.api.nativeAd;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes4.dex */
+public abstract class PAGNativeAdInteractionCallback implements PAGNativeAdInteractionListener {
+    @Override // com.bytedance.sdk.openadsdk.api.PAGAdListener
+    public void onAdClicked() {
+    }
+
+    @Override // com.bytedance.sdk.openadsdk.api.PAGAdListener
+    public void onAdDismissed() {
+    }
+
+    @Override // com.bytedance.sdk.openadsdk.api.PAGAdListener
+    public void onAdShowed() {
+    }
+}

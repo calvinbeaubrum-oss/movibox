@@ -1,0 +1,22 @@
+package com.google.android.gms.maps.internal;
+
+import android.os.Parcel;
+import android.os.RemoteException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public abstract class zzs extends com.google.android.gms.internal.maps.zzb implements zzr {
+    public zzs() {
+        super("com.google.android.gms.maps.internal.IOnCameraMoveListener");
+    }
+
+    @Override // com.google.android.gms.internal.maps.zzb
+    public final boolean dispatchTransaction(int i11, Parcel parcel, Parcel parcel2, int i12) throws RemoteException {
+        if (i11 != 1) {
+            return false;
+        }
+        onCameraMove();
+        parcel2.writeNoException();
+        return true;
+    }
+}

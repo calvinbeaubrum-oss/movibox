@@ -1,0 +1,84 @@
+package hn;
+
+import androidx.annotation.NonNull;
+import com.cloud.sdk.commonutil.util.DeviceUtil;
+import com.hisavana.common.base.BaseSplash;
+import com.hisavana.common.base.LogSwitch;
+import com.hisavana.common.bean.AdCache;
+import com.hisavana.common.bean.TInnerAdRequestBody;
+import com.hisavana.common.manager.AdCacheManager;
+import com.hisavana.common.mock.RecordTestInfo;
+import com.hisavana.common.utils.AdLogUtil;
+import com.hisavana.mediation.bean.CloudControlConfig;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes6.dex */
+public class r extends c<BaseSplash, BaseSplash> {
+    public static AdCache<BaseSplash> B = new AdCache<>();
+
+    public r(CloudControlConfig.CodeSeat codeSeat, i iVar, s sVar) {
+        super(codeSeat, iVar, sVar);
+    }
+
+    @Override // hn.c
+    @NonNull
+    public AdCache<BaseSplash> I() {
+        return AdCacheManager.getCache(4);
+    }
+
+    @Override // hn.c
+    public boolean d0() {
+        return true;
+    }
+
+    @Override // hn.c
+    /* JADX INFO: renamed from: q0, reason: merged with bridge method [inline-methods] */
+    public void o(BaseSplash baseSplash) {
+        if (baseSplash == null || I().hasAd(this.f66559j, baseSplash)) {
+            return;
+        }
+        baseSplash.destroyAd();
+    }
+
+    @Override // hn.c
+    /* JADX INFO: renamed from: r0, reason: merged with bridge method [inline-methods] */
+    public void z(BaseSplash baseSplash) {
+        if (baseSplash != null) {
+            baseSplash.pauseAd();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v1, types: [C, com.hisavana.common.interfacz.ICacheAd] */
+    @Override // hn.c
+    /* JADX INFO: renamed from: s0, reason: merged with bridge method [inline-methods] */
+    public BaseSplash c(boolean z11) {
+        ?? cache = I().getCache(this.f66559j, false, U(), z11);
+        this.f66558i = cache;
+        if (cache == 0) {
+            AdLogUtil.Log().w("SplashCacheHandler", "no ad");
+            return null;
+        }
+        I().removeCache(this.f66559j, (BaseSplash) this.f66558i);
+        if (((BaseSplash) this.f66558i).isExpired()) {
+            AdLogUtil.Log().w("SplashCacheHandler", "ad is expired");
+            return null;
+        }
+        TInnerAdRequestBody tInnerAdRequestBodyA = a(null, 2);
+        ((BaseSplash) this.f66558i).addRequestBody(tInnerAdRequestBodyA);
+        ((BaseSplash) this.f66558i).setShowId(DeviceUtil.n());
+        i(tInnerAdRequestBodyA, this.f66551b);
+        if (LogSwitch.isDebug) {
+            RecordTestInfo.LogMsg(RecordTestInfo.getLogMsg((BaseSplash) this.f66558i) + "  isSupportFlag = " + U(), RecordTestInfo.LOG_CODE12);
+        }
+        return (BaseSplash) this.f66558i;
+    }
+
+    @Override // hn.c
+    /* JADX INFO: renamed from: t0, reason: merged with bridge method [inline-methods] */
+    public void H(BaseSplash baseSplash) {
+        if (baseSplash != null) {
+            baseSplash.resumeAd();
+        }
+    }
+}

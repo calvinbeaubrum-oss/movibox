@@ -1,0 +1,18 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzdai implements zzhhd {
+    private final zzdah zza;
+    private final zzhhu zzb;
+
+    public zzdai(zzdah zzdahVar, zzhhu zzhhuVar) {
+        this.zza = zzdahVar;
+        this.zzb = zzhhuVar;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhhu
+    public final /* synthetic */ Object zzb() {
+        return this.zza.zze((String) this.zzb.zzb());
+    }
+}

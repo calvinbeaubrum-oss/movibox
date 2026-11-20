@@ -1,0 +1,80 @@
+package com.mbridge.msdk.thrid.okhttp.internal.tls;
+
+import java.security.GeneralSecurityException;
+import java.security.cert.Certificate;
+import java.security.cert.X509Certificate;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import javax.net.ssl.SSLPeerUnverifiedException;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes7.dex */
+public final class BasicCertificateChainCleaner extends CertificateChainCleaner {
+    private static final int MAX_SIGNERS = 9;
+    private final TrustRootIndex trustRootIndex;
+
+    public BasicCertificateChainCleaner(TrustRootIndex trustRootIndex) {
+        this.trustRootIndex = trustRootIndex;
+    }
+
+    private boolean verifySignature(X509Certificate x509Certificate, X509Certificate x509Certificate2) {
+        if (!x509Certificate.getIssuerDN().equals(x509Certificate2.getSubjectDN())) {
+            return false;
+        }
+        try {
+            x509Certificate.verify(x509Certificate2.getPublicKey());
+            return true;
+        } catch (GeneralSecurityException unused) {
+            return false;
+        }
+    }
+
+    @Override // com.mbridge.msdk.thrid.okhttp.internal.tls.CertificateChainCleaner
+    public List<Certificate> clean(List<Certificate> list, String str) throws SSLPeerUnverifiedException {
+        X509Certificate x509Certificate;
+        ArrayDeque arrayDeque = new ArrayDeque(list);
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(arrayDeque.removeFirst());
+        boolean z11 = false;
+        for (int i11 = 0; i11 < 9; i11++) {
+            X509Certificate x509Certificate2 = (X509Certificate) arrayList.get(arrayList.size() - 1);
+            X509Certificate x509CertificateFindByIssuerAndSignature = this.trustRootIndex.findByIssuerAndSignature(x509Certificate2);
+            if (x509CertificateFindByIssuerAndSignature != null) {
+                if (arrayList.size() > 1 || !x509Certificate2.equals(x509CertificateFindByIssuerAndSignature)) {
+                    arrayList.add(x509CertificateFindByIssuerAndSignature);
+                }
+                if (verifySignature(x509CertificateFindByIssuerAndSignature, x509CertificateFindByIssuerAndSignature)) {
+                    return arrayList;
+                }
+                z11 = true;
+            } else {
+                Iterator it = arrayDeque.iterator();
+                do {
+                    if (!it.hasNext()) {
+                        if (z11) {
+                            return arrayList;
+                        }
+                        throw new SSLPeerUnverifiedException("Failed to find a trusted cert that signed " + x509Certificate2);
+                    }
+                    x509Certificate = (X509Certificate) it.next();
+                } while (!verifySignature(x509Certificate2, x509Certificate));
+                it.remove();
+                arrayList.add(x509Certificate);
+            }
+        }
+        throw new SSLPeerUnverifiedException("Certificate chain too long: " + arrayList);
+    }
+
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        return (obj instanceof BasicCertificateChainCleaner) && ((BasicCertificateChainCleaner) obj).trustRootIndex.equals(this.trustRootIndex);
+    }
+
+    public int hashCode() {
+        return this.trustRootIndex.hashCode();
+    }
+}

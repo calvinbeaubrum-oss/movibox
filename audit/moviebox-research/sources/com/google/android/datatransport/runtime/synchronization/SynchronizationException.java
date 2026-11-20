@@ -1,0 +1,9 @@
+package com.google.android.datatransport.runtime.synchronization;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes.dex */
+public class SynchronizationException extends RuntimeException {
+    public SynchronizationException(String str, Throwable th2) {
+        super(str, th2);
+    }
+}

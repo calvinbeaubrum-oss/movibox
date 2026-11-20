@@ -1,0 +1,11 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public interface zzdbb {
+    void zza(com.google.android.gms.ads.internal.client.zze zzeVar);
+
+    void zzb();
+
+    void zzc(zzdkv zzdkvVar);
+}

@@ -1,0 +1,18 @@
+package com.google.android.gms.internal.ads;
+
+/* JADX INFO: compiled from: source.java */
+/* JADX INFO: loaded from: classes5.dex */
+public final class zzcxt implements zzhhd {
+    private final zzcxr zza;
+    private final zzhhu zzb;
+
+    public zzcxt(zzcxr zzcxrVar, zzhhu zzhhuVar) {
+        this.zza = zzcxrVar;
+        this.zzb = zzhhuVar;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzhhu
+    public final /* bridge */ /* synthetic */ Object zzb() {
+        return new zzdim((zzcyb) this.zzb.zzb(), zzcep.zzf);
+    }
+}
